@@ -5,7 +5,7 @@ namespace Letter
 {
     public class LetterManager : MonoBehaviour, IPointerClickHandler
     {
-        public float speed = 0.1f;
+        public float speed = 0.01f;
         private string _text;
         private bool _isPrintingFinished;
         public TMPro.TextMeshProUGUI textLetterComponent;
@@ -44,7 +44,7 @@ namespace Letter
         {
             if (_isPrintingFinished)
             {
-                Debug.Log("Next scene");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
             }
         }
     }
