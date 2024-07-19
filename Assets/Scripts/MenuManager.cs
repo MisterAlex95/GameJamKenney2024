@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
         _transitionManager = TransitionManager.Instance();
     }
 
