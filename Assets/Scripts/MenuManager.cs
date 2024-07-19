@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     public void PlayGame()
     {
