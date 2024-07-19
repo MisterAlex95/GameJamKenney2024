@@ -1,17 +1,23 @@
+using EasyTransition;
 using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    public TransitionSettings transitionSettings;
+    private TransitionManager _transitionManager;
+
+    private void Start()
+    {
+        _transitionManager = TransitionManager.Instance();
+    }
+
     public void PlayGame()
     {
-        Debug.Log("clicked");
-        // Load the next scene in the build index
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        _transitionManager.Transition("LetterScene", transitionSettings, 0);
     }
 
     public void QuitGame()
     {
-        // Quit the game
         Application.Quit();
     }
 }

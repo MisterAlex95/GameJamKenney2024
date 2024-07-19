@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1534c5f76332492b8457c93881c39e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionSettings: {fileID: 11400000, guid: 057babd6f13132c449650d99e3c4e99c, type: 2}
   speed: 0.01
   textLetterComponent: {fileID: 2116850815}
   endMessage: {fileID: 1087749676}

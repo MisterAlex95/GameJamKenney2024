@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using EasyTransition;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 namespace Letter
 {
     public class LetterManager : MonoBehaviour, IPointerClickHandler
     {
+        public TransitionSettings transitionSettings;
+        private TransitionManager _transitionManager;
+
         public float speed = 0.01f;
         private string _text;
         private bool _isPrintingFinished;
@@ -17,15 +21,16 @@ namespace Letter
             _isPrintingFinished = false;
             _text = textLetterComponent.text;
             textLetterComponent.text = "";
+            _transitionManager = TransitionManager.Instance();
             StartCoroutine(PrintText());
         }
 
         private System.Collections.IEnumerator PrintText()
         {
+            yield return new WaitForSeconds(1);
             foreach (var t in _text)
             {
                 textLetterComponent.text += t;
-
                 yield return new WaitForSeconds(speed);
             }
 
@@ -42,10 +47,9 @@ namespace Letter
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (_isPrintingFinished)
-            {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-            }
+            if (!_isPrintingFinished) return;
+            Debug.Log(transitionSettings);
+            _transitionManager.Transition("GameScene", transitionSettings, 0);
         }
     }
 }
