@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: A_0
   m_EditorClassIdentifier: 
   enableDialogAtStage: 0
-  currentDialogIndex: 0
-  DialogText:
-  - "Coucou \xE7a va ?"
-  - Moi oui merci
+  dialogText:
+  - A
+  - B

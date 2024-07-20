@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: A_1
   m_EditorClassIdentifier: 
   enableDialogAtStage: 1
-  currentDialogIndex: 0
-  DialogText:
-  - "Ah tu as trouv\xE9 \xE7a"
-  - "Bien jou\xE9 ;)"
+  dialogText:
+  - C
+  - D
