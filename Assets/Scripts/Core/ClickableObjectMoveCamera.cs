@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Camera;
+using UnityEngine;
 
-namespace Camera
+namespace Core
 {
-    public class ClickToMoveCamera : MonoBehaviour
+    public class ClickableObjectMoveCamera : MonoBehaviour
     {
         public CameraPositionName cameraPositionName;
 

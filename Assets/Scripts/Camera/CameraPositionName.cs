@@ -4,6 +4,7 @@
     {
         Kitchen,
         LivingRoom,
-        Hall
+        Hall,
+        Fridge
     }
 }

@@ -90,29 +90,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b1bc3af4bb1f584db6f5f8fe4a9af9c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2513136085011155277}
+      addedObject: {fileID: 1282703259940168836}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b1bc3af4bb1f584db6f5f8fe4a9af9c, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1282703259940168836}
+      addedObject: {fileID: 3051716929555433424}
   m_SourcePrefab: {fileID: 100100000, guid: 1b1bc3af4bb1f584db6f5f8fe4a9af9c, type: 3}
 --- !u!1 &2361175729281860773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b1bc3af4bb1f584db6f5f8fe4a9af9c, type: 3}
   m_PrefabInstance: {fileID: 3172219694095776244}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2513136085011155277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2361175729281860773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7621822ef18f4bc68ca14db0223174a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraPositionName: 0
 --- !u!65 &1282703259940168836
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -134,3 +121,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3051716929555433424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2361175729281860773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5597a89ce4a74297be0b08da1aed6321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraPositionName: 0
