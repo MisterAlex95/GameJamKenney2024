@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Camera;
 using Dialog;
 using UnityEngine;
@@ -6,12 +7,11 @@ using UnityEngine;
 namespace Core
 {
     [RequireComponent(typeof(BoxCollider))]
-    public class ClickableObjectRunAnimationAndMoveCamera : MonoBehaviour
+    public class ClickableObjectOpenDialog : MonoBehaviour
     {
         public List<CameraPositionName> canBeTriggerFromCameraPositions;
-        public CameraPositionName cameraPositionName;
-        public string triggerName;
-        public bool state = false;
+        public DialogData dialogData;
+        private bool _alreadyTriggered = false;
 
         private void Start()
         {
@@ -22,10 +22,10 @@ namespace Core
         {
             if (DialogManager.Instance.IsDialogActive) return;
             if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance().GetCameraPosition())) return;
-            CameraManager.Instance().SetCameraPosition(cameraPositionName);
-            if (triggerName == null) return;
-            state = !state;
-            GetComponent<Animator>().SetBool(triggerName, state);
+
+            if (!dialogData.looping && _alreadyTriggered) return;
+            DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData));
+            _alreadyTriggered = true;
         }
     }
 }

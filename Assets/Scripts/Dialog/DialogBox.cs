@@ -1,5 +1,4 @@
-﻿using Character;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,32 +8,30 @@ namespace Dialog
     {
         private TMP_Text _dialogText;
         private Character.Character _character;
+        private IDialog _dialog;
 
         private void Awake()
         {
             _dialogText = GetComponentInChildren<TMP_Text>();
         }
 
-        public void SetDialog(Character.Character character)
+
+        public void StartDialog(IDialog dialog)
         {
-            _character = character;
+            _dialog = dialog;
+            _dialogText.text = dialog.GetNextDialog();
         }
 
-        public void GetNextDialog()
+        public void OnPointerClick(PointerEventData eventData)
         {
-            if (_character.HasNextDialog())
+            if (_dialog.HasNextDialog())
             {
-                _dialogText.text = _character.GetNextDialog();
+                _dialogText.text = _dialog.GetNextDialog();
             }
             else
             {
                 DialogManager.Instance.EndDialog();
             }
-        }
-
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            GetNextDialog();
         }
     }
 }

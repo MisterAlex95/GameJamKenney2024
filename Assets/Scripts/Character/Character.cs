@@ -7,58 +7,51 @@ namespace Character
     public class Character : MonoBehaviour
     {
         public CharacterData characterData;
-        private int _currentDialogIndex = 0;
-        private bool _isDialogActive = false;
+        private bool _alreadyTriggered = false;
+        private int _currentState = 0;
 
         private void Start()
         {
-            GameManager.Instance.SetCharacterState(characterData.characterName, 0);
+            GameManager.Instance.SetCharacterState(characterData.characterName, _currentState);
         }
 
-        public int GetCurrentState()
+        private int GetCurrentState()
         {
-            return GameManager.Instance.GetCharacterState(characterData.characterName);
+            var newState = GameManager.Instance.GetCharacterState(characterData.characterName);
+            if (newState == _currentState) return _currentState;
+
+            _alreadyTriggered = false;
+            _currentState = newState;
+            return _currentState;
         }
 
         public void OnMouseDown()
         {
-            if (_isDialogActive) return;
+            if (DialogManager.Instance.IsDialogActive) return;
 
             if (GetCurrentState() >= characterData.dialogs.Length)
             {
                 return;
             }
 
-            _currentDialogIndex = 0;
-            Dialog.DialogManager.Instance.StartDialog(this);
-            _isDialogActive = true;
+            var dialog = GetCurrentDialog();
+            if (dialog == null) return;
+            Dialog.DialogManager.Instance.StartDialog(dialog);
+            _alreadyTriggered = true;
         }
 
-        private DialogData GetCurrentDialog()
+        private IDialog GetCurrentDialog()
         {
-            return characterData.dialogs[GetCurrentState()];
-        }
-
-        public bool HasNextDialog()
-        {
-            if ((GetCurrentDialog().dialogText.Count - _currentDialogIndex) > 0 &&
-                GetCurrentState() >= GetCurrentDialog().enableDialogAtStage)
+            foreach (var dialog in characterData.dialogs)
             {
-                return true;
+                if (dialog.enableDialogAtStage != GetCurrentState()) continue;
+                if (!dialog.looping && _alreadyTriggered)
+                    continue;
+
+                return new Dialog.Dialog(dialog);
             }
 
-            _isDialogActive = false;
-            _currentDialogIndex = 0;
-            return false;
-        }
-
-        public string GetNextDialog()
-        {
-            if (!HasNextDialog()) return null;
-            var dialog = GetCurrentDialog().dialogText[_currentDialogIndex];
-            _currentDialogIndex++;
-
-            return dialog;
+            return null;
         }
     }
 }
