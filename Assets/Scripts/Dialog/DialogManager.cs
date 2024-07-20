@@ -19,11 +19,6 @@ namespace Dialog
             }
         }
 
-        private void Start()
-        {
-            dialogBox.gameObject.SetActive(false);
-        }
-
         public void StartDialog(Character.Character character)
         {
             dialogBox.gameObject.SetActive(true);

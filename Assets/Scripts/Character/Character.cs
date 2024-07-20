@@ -7,7 +7,6 @@ namespace Character
     public class Character : MonoBehaviour
     {
         public CharacterData characterData;
-        private int _processedDialogs = 0;
         private int _currentDialogIndex = 0;
         private bool _isDialogActive = false;
 
@@ -25,7 +24,7 @@ namespace Character
         {
             if (_isDialogActive) return;
 
-            if (_processedDialogs >= characterData.dialogs.Length)
+            if (GetCurrentState() >= characterData.dialogs.Length)
             {
                 return;
             }
@@ -37,19 +36,18 @@ namespace Character
 
         private DialogData GetCurrentDialog()
         {
-            return characterData.dialogs[_processedDialogs];
+            return characterData.dialogs[GetCurrentState()];
         }
 
         public bool HasNextDialog()
         {
             if ((GetCurrentDialog().dialogText.Count - _currentDialogIndex) > 0 &&
-                GetCurrentState() <= GetCurrentDialog().enableDialogAtStage)
+                GetCurrentState() >= GetCurrentDialog().enableDialogAtStage)
             {
                 return true;
             }
 
             _isDialogActive = false;
-            _processedDialogs++;
             _currentDialogIndex = 0;
             return false;
         }

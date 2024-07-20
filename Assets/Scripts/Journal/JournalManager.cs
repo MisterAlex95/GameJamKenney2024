@@ -25,7 +25,6 @@ namespace Journal
                 }
             };
 
-        // Singleton
         public static JournalManager Instance { get; private set; }
 
         private void Awake()
@@ -38,11 +37,6 @@ namespace Journal
             {
                 Destroy(gameObject);
             }
-        }
-
-        private void Start()
-        {
-            ToggleJournal();
         }
 
         public void ToggleJournal()
