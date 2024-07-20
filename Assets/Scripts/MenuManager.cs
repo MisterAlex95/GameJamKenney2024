@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        _transitionManager.Transition("LetterScene", transitionSettings, 0);
+        _transitionManager.Transition("MailScene", transitionSettings, 0);
     }
 
     public void QuitGame()
