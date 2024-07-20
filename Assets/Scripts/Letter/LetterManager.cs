@@ -60,7 +60,6 @@ namespace Letter
         public void OnPointerClick(PointerEventData eventData)
         {
             if (!_isPrintingFinished) return;
-            Debug.Log(transitionSettings);
             _transitionManager.Transition("GameScene", transitionSettings, 0);
         }
     }

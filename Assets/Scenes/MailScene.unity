@@ -2399,13 +2399,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hello,\n\nAs discussed by phone we need your services in order to \nhelp
-    us tackle a pretty urgent case.\nWe don\u2019t have sufficient staff currently
-    because of a major event \nthat need a huge security.\n\nTo summarize your mission:\n
-    - A murder occurred today at 18 Luta Street at the Pumins.\n - 1, 2 and 3 are
-    suspects in this case.\n - The doctor\u2019s report is on site.\n\nPlease go
-    there as soon as possible and we will join you once the event is over.\n\nBest
-    Regards,\n\nOfficer Kenney, Bricktown Police"
+  m_text: "Hello Camden Team,\n\nAs discussed by phone we need your services in order
+    to help us tackle a pretty \nurgent case.\nWe don\u2019t have sufficient staff
+    currently because of a major event that need a\nhuge security. To summarize your
+    mission:\n - A murder occurred today at 18 Luta Street at the Pumins.\n - Daniel
+    Pumin, Ian Pumin and Livia Sumner are suspects in this case.\n - The doctor\u2019s
+    report is on site.\n\nPlease go there as soon as possible and we will join you
+    once the event is over.\n\nBest Regards,\n\nOfficer Kenney, Bricktown Police"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
