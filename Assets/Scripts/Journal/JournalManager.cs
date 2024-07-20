@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Core;
 using UnityEngine;
 
 namespace Journal
@@ -41,8 +42,13 @@ namespace Journal
 
         public void ToggleJournal()
         {
-            journalContainer.SetActive(!journalContainer.activeSelf);
+            if (!journalContainer.activeSelf && GameManager.Instance.CanInteract())
+                journalContainer.SetActive(true);
+            else
+                journalContainer.SetActive(false);
         }
+
+        public bool IsJournalActive => journalContainer.activeSelf;
 
         public void UnlockActivity(JournalActivityName activity)
         {

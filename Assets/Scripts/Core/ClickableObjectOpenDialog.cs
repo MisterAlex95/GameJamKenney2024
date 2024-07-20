@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Camera;
 using Dialog;
 using UnityEngine;
@@ -20,7 +19,7 @@ namespace Core
 
         public void OnMouseDown()
         {
-            if (DialogManager.Instance.IsDialogActive) return;
+            if (!GameManager.Instance.CanInteract()) return;
             if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance().GetCameraPosition())) return;
 
             if (!dialogData.looping && _alreadyTriggered) return;

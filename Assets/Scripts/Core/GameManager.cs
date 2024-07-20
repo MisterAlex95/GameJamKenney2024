@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Journal;
 using UnityEngine;
 
 namespace Core
@@ -21,10 +22,30 @@ namespace Core
             }
         }
 
+        #region Global
+
+        public bool CanInteract()
+        {
+            return !Dialog.DialogManager.Instance.IsDialogActive && !JournalManager.Instance.IsJournalActive;
+        }
+
+        #endregion
+
+        #region Character State
+
         public void SetCharacterState(string characterName, int state)
         {
             _characterState[characterName] = state;
         }
+
+        public int GetCharacterState(string characterName)
+        {
+            return _characterState.GetValueOrDefault(characterName, -1);
+        }
+
+        #endregion
+
+        #region Debug
 
         [ContextMenu("Reset Character State")]
         public void ResetCharacterState()
@@ -44,9 +65,6 @@ namespace Core
             }
         }
 
-        public int GetCharacterState(string characterName)
-        {
-            return _characterState.GetValueOrDefault(characterName, -1);
-        }
+        #endregion
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 
 namespace Dialog
 {
@@ -24,6 +25,8 @@ namespace Dialog
 
         public void StartDialog(IDialog dialogData)
         {
+            if (!GameManager.Instance.CanInteract()) return;
+
             dialogBox.gameObject.SetActive(true);
             dialogBox.StartDialog(dialogData);
         }
