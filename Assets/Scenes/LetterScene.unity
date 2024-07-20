@@ -363,7 +363,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -463,8 +463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -14.299072, y: 15.793396}
-  m_SizeDelta: {x: -363.07, y: 46.9002}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 103.74}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1087749676
 MonoBehaviour:
@@ -596,10 +596,10 @@ RectTransform:
   - {fileID: 2116850814}
   m_Father: {fileID: 899351047}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -14.300049, y: -4.5}
-  m_SizeDelta: {x: -363.0695, y: -165.9746}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -14.6834, y: -7.4935}
+  m_SizeDelta: {x: 598.3772, y: 377.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1915978753
 MonoBehaviour:
@@ -742,7 +742,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -60.000004, y: -60}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2116850815
 MonoBehaviour:
@@ -764,12 +764,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nLorem ipsum \n\nDolor sit amet, consectetur adipiscing elit, sed do
-    eiusmod\n tempor incididunt ut labore et dolore magna aliqua. \nUt enim ad minim
-    veniam, quis nostrud exercitation ullamco \nlaboris nisi ut aliquip ex ea commodo
-    consequat. Duis\n aute irure dolor in reprehenderit in voluptate velit esse\n
-    cillum dolore eu fugiat nulla pariatur. Excepteur\n sint occaecat cupidatat non
-    proident, sunt in culpa qui \nofficia deserunt mollit anim id est laborum.\n\n\n\t\t\t\t\t\tBisous
+  m_text: " Lorem ipsum \n\nDolor sit amet, consectetur adipiscing elit, sed do \neiusmod
+    tempor incididunt ut labore et dolore magna\naliqua. \nUt enim ad minim veniam,
+    quis nostrud exercitation\nullamco laboris nisi ut aliquip ex ea commodo\nconsequat.
+    Duis aute irure dolor in reprehenderit\nin voluptate velit esse cillum dolore
+    eu fugiat nulla \npariatur. Excepteur sint occaecat cupidatat non \nproident,
+    sunt in culpa qui officia deserunt mollit \nanim id est laborum.\n\t\t\t\t\t\tBisous
     <3"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -797,8 +797,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.75
-  m_fontSizeBase: 14.75
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 10
