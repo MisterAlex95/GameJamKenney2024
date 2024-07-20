@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4c162d56d43470ba0fe4b13b56c8d73, type: 3}
-  m_Name: A_1
+  m_Name: Livia_Sumner_0
   m_EditorClassIdentifier: 
-  enableDialogAtStage: 1
+  looping: 0
+  enableDialogAtStage: 0
+  speakerSprite: {fileID: 21300000, guid: fa077589ebae1c44098754ff4b9ac781, type: 3}
   dialogText:
-  - C
-  - D
+  - A
+  - B

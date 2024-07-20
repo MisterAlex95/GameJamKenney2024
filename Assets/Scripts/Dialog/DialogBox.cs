@@ -1,32 +1,31 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Dialog
 {
     public class DialogBox : MonoBehaviour, IPointerClickHandler
     {
-        private TMP_Text _dialogText;
-        private Character.Character _character;
+        public TMP_Text dialogText;
+        public Image speakerImage;
+        public TMP_Text speakerName;
         private IDialog _dialog;
-
-        private void Awake()
-        {
-            _dialogText = GetComponentInChildren<TMP_Text>();
-        }
 
 
         public void StartDialog(IDialog dialog)
         {
             _dialog = dialog;
-            _dialogText.text = dialog.GetNextDialog();
+            speakerName.text = dialog.GetSpeakerName();
+            speakerImage.sprite = dialog.GetSpeakerSprite();
+            dialogText.text = dialog.GetNextDialog();
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
             if (_dialog.HasNextDialog())
             {
-                _dialogText.text = _dialog.GetNextDialog();
+                dialogText.text = _dialog.GetNextDialog();
             }
             else
             {

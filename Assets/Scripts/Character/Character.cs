@@ -48,6 +48,7 @@ namespace Character
                 if (!dialog.looping && _alreadyTriggered)
                     continue;
 
+                dialog.speakerName = characterData.characterName;
                 return new Dialog.Dialog(dialog);
             }
 
