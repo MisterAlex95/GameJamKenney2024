@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: de027eb5d9c894140a2aaeb9163c487f
   - enabled: 1
-    path: Assets/Scenes/LetterScene.unity
+    path: Assets/Scenes/MailScene.unity
     guid: 3c0ff60801b8c4244bc6af1b42ca7831
   - enabled: 1
     path: Assets/Scenes/GameScene.unity

@@ -1,6 +1,8 @@
-﻿using EasyTransition;
+﻿using System.Collections;
+using EasyTransition;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Letter
 {
@@ -15,6 +17,10 @@ namespace Letter
         public TMPro.TextMeshProUGUI textLetterComponent;
         public TMPro.TextMeshProUGUI endMessage;
 
+        public Button CursorButton;
+        public GameObject newMailContainer;
+        public GameObject mailContainer;
+
         private void Start()
         {
             endMessage.color = new Color(1, 1, 1, 0);
@@ -22,10 +28,16 @@ namespace Letter
             _text = textLetterComponent.text;
             textLetterComponent.text = "";
             _transitionManager = TransitionManager.Instance();
-            StartCoroutine(PrintText());
+
+            CursorButton.onClick.AddListener(() =>
+            {
+                newMailContainer.SetActive(false);
+                mailContainer.SetActive(true);
+                StartCoroutine(PrintText());
+            });
         }
 
-        private System.Collections.IEnumerator PrintText()
+        private IEnumerator PrintText()
         {
             yield return new WaitForSeconds(1);
             foreach (var t in _text)
