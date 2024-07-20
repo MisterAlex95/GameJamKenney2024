@@ -40,6 +40,11 @@ namespace Journal
             }
         }
 
+        private void Start()
+        {
+            ToggleJournal();
+        }
+
         public void ToggleJournal()
         {
             journalContainer.SetActive(!journalContainer.activeSelf);
