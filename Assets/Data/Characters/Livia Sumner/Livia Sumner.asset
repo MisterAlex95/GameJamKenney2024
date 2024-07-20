@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f892cefe424640839fba69cf450cd5, type: 3}
   m_Name: Livia Sumner
   m_EditorClassIdentifier: 
-  characterName: Livia Sumner
+  characterName: 2
   dialogs:
   - {fileID: 11400000, guid: 39708fbfd071b744db56657e061de27d, type: 2}
   - {fileID: 11400000, guid: 955b37a25a1812740a262b389fc246af, type: 2}

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Character;
 using Dialog;
 using Journal;
 using Sound;
@@ -13,11 +14,28 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
+        [Header("Introduction")]
         public GameObject blackScreen;
+        public GameObject letterScreen;
         private Image _blackScreenImage;
         private TMP_Text _blackScreenText;
 
-        private readonly Dictionary<string, int> _characterState = new();
+        private readonly Dictionary<CharacterName, int> _characterState = new();
+
+        // Modal Variables
+        [Header("Modal")]
+        public GameObject modalScreen;
+        private bool _isModalActive;
+        private TMP_Text _modalText;
+        private Action _modalCloseAction;
+
+        // Letter Variables
+        [Header("Letter")]
+        public GameObject letterToSpawn;
+        public Transform positionToSpawnLetter;
+        private bool _isPrintingFinished;
+        private string _textLetter;
+
         public static GameManager Instance { get; private set; }
 
         private void Awake()
@@ -35,6 +53,7 @@ namespace Core
         private void Start()
         {
             SetMoveDisabled(true);
+            _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
             // StartCoroutine(Introduction());
@@ -93,13 +112,69 @@ namespace Core
             blackScreen.SetActive(false);
         }
 
+        public void OpenLetter(Action action)
+        {
+            StartCoroutine(OpenLetterCoroutine(action));
+        }
+
+        private IEnumerator OpenLetterCoroutine(Action action)
+        {
+            var textLetterComponent = letterScreen.GetComponentInChildren<TMP_Text>();
+            _isPrintingFinished = false;
+            _textLetter = textLetterComponent.text;
+            textLetterComponent.text = "";
+
+            letterScreen.SetActive(true);
+            yield return new WaitForSeconds(1);
+
+            foreach (var t in _textLetter)
+            {
+                textLetterComponent.text += t;
+                yield return new WaitForSeconds(0.01f);
+            }
+
+            _isPrintingFinished = true;
+            var letterButton = letterScreen.GetComponent<Button>();
+            letterButton.onClick.AddListener(() => action?.Invoke());
+        }
+
+        public bool IsPrintingFinished()
+        {
+            return _isPrintingFinished;
+        }
+
+        #endregion
+
+        #region Modal
+
+        public void OpenModal(string text, Action onClose = default)
+        {
+            _modalText.text = text;
+            modalScreen.SetActive(true);
+            _isModalActive = true;
+            _modalCloseAction = onClose;
+        }
+
+        public void CloseModal()
+        {
+            modalScreen.SetActive(false);
+            _modalText.text = "";
+            _isModalActive = false;
+            _modalCloseAction?.Invoke();
+        }
+
+        public bool IsModalActive()
+        {
+            return _isModalActive;
+        }
+
         #endregion
 
         #region Global
 
         public bool CanInteract()
         {
-            return !Dialog.DialogManager.Instance.IsDialogActive && !JournalManager.Instance.IsJournalActive;
+            return !DialogManager.Instance.IsDialogActive && !JournalManager.Instance.IsJournalActive;
         }
 
         public void SetMoveDisabled(bool isDisabled)
@@ -110,16 +185,37 @@ namespace Core
             }
         }
 
+        public void ProcessTriggerAction(TriggerActionName triggerAction)
+        {
+            switch (triggerAction)
+            {
+                case TriggerActionName.None:
+                    break;
+                case TriggerActionName.Letter_Appear:
+                    Instantiate(letterToSpawn, positionToSpawnLetter);
+                    break;
+                case TriggerActionName.Enable_Inventory:
+                case TriggerActionName.Enable_Notebook:
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
+            }
+        }
+
         #endregion
 
         #region Character State
 
-        public void SetCharacterState(string characterName, int state)
+        public void SetCharacterState(CharacterName characterName, int state)
         {
             _characterState[characterName] = state;
         }
 
-        public int GetCharacterState(string characterName)
+        public void IncrCharacterState(CharacterName characterName)
+        {
+            _characterState[characterName] += 1;
+        }
+
+        public int GetCharacterState(CharacterName characterName)
         {
             return _characterState.GetValueOrDefault(characterName, -1);
         }

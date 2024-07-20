@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Core;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -45,6 +46,16 @@ namespace Dialog
             }
             else
             {
+                if (_dialog.ShouldIncreaseStageOnDialogEnd())
+                {
+                    GameManager.Instance.IncrCharacterState(_dialog.GetCharacterToIncreaseStage());
+                }
+
+                if (_dialog.GetTriggerActionName() != TriggerActionName.None)
+                {
+                    GameManager.Instance.ProcessTriggerAction(_dialog.GetTriggerActionName());
+                }
+
                 DialogManager.Instance.EndDialog();
             }
         }

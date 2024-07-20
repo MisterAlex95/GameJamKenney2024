@@ -8,7 +8,7 @@ namespace Character
     {
         public CharacterData characterData;
         private bool _alreadyTriggered = false;
-        private int _currentState = 0;
+        public int _currentState = 0;
 
         private void Start()
         {
@@ -48,7 +48,7 @@ namespace Character
                 if (!dialog.looping && _alreadyTriggered)
                     continue;
 
-                dialog.speakerName = characterData.characterName;
+                dialog.speakerName = characterData.characterName.GetString();
                 return new Dialog.Dialog(dialog);
             }
 

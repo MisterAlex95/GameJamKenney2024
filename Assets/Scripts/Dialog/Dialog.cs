@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Character;
+using Core;
+using UnityEngine;
 
 namespace Dialog
 {
@@ -8,9 +10,15 @@ namespace Dialog
         private readonly string[] _texts;
         private readonly Sprite _speakerSprite;
         private readonly string _speakerName;
+        private readonly bool _increaseStageOnDialogEnd;
+        private readonly TriggerActionName _triggerActionName;
+        private readonly CharacterName _characterNameToIncreaseStage;
 
         public Dialog(DialogData dialogData)
         {
+            _triggerActionName = dialogData.triggerActionName;
+            _increaseStageOnDialogEnd = dialogData.increaseStageOnDialogEnd;
+            _characterNameToIncreaseStage = dialogData.characterToIncreaseStage;
             _speakerSprite = dialogData.speakerSprite;
             _speakerName = dialogData.speakerName;
             _texts = dialogData.dialogText.ToArray();
@@ -29,6 +37,21 @@ namespace Dialog
         public bool HasNextDialog()
         {
             return _currentDialogIndex < _texts.Length;
+        }
+
+        public bool ShouldIncreaseStageOnDialogEnd()
+        {
+            return _increaseStageOnDialogEnd;
+        }
+
+        public CharacterName GetCharacterToIncreaseStage()
+        {
+            return _characterNameToIncreaseStage;
+        }
+
+        public TriggerActionName GetTriggerActionName()
+        {
+            return _triggerActionName;
         }
 
         public string GetNextDialog()

@@ -14,13 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   looping: 0
   enableDialogAtStage: 0
+  increaseStageOnDialogEnd: 0
+  characterToIncreaseStage: 0
+  triggerActionName: 1
   speakerSprite: {fileID: 21300000, guid: c9205a94771dcea418121aa994343ebf, type: 3}
-  speakerName: Daniel Pumin
+  speakerName: Daniel
   dialogText:
-  - +Hello, we are Alex and Mary from Camden. We were contacted by Officer Kenney
-    from the Police about the murder of Maddy Thomas.
+  - +Hello, we are Alex and Mary from Camden.
+  - +We were contacted by Officer Kenney from the Police about the murder of Maddy
+    Thomas.
   - "Hello, I\u2019m Daniel. Yes they told us that someone will come later today. "
-  - "+Thank you a lot for the help. First of all we were told that we\u2019ll be
-    able to find the doctor\u2019s report at your house. Can we have it please?"
   - "Thanks for being so fast. It is a sad day for all of us, but we\u2019ll try
     to help you as much as possible."
+  - +Thank you a lot for the help.
+  - "+First of all we were told that we\u2019ll be able to find the doctor\u2019s
+    report at your house. Can we have it please?"
+  - Yes, sure. Here it is.

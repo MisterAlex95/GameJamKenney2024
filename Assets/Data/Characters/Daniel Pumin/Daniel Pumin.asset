@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f892cefe424640839fba69cf450cd5, type: 3}
   m_Name: Daniel Pumin
   m_EditorClassIdentifier: 
-  characterName: Daniel Pumin
+  characterName: 1
   dialogs:
   - {fileID: 11400000, guid: e014d30c7e04e944d939e0a6cb36785d, type: 2}
   - {fileID: 11400000, guid: 4f0a694a2c060a84fb89e9d851a2766f, type: 2}

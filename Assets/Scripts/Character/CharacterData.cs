@@ -7,7 +7,7 @@ namespace Character
     [CreateAssetMenu(fileName = "CharacterData", menuName = "Character/CharacterData")]
     public class CharacterData : ScriptableObject
     {
-        public string characterName;
+        public CharacterName characterName;
         public DialogData[] dialogs;
     }
 }
