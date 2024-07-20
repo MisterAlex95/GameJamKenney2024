@@ -15,6 +15,11 @@ namespace Camera
             return _instance;
         }
 
+        public CameraPositionName GetCameraPosition()
+        {
+            return currentRoom;
+        }
+
         private void Awake()
         {
             if (_instance == null)
