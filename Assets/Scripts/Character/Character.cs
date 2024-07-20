@@ -29,7 +29,7 @@ namespace Character
         {
             if (DialogManager.Instance.IsDialogActive) return;
 
-            if (GetCurrentState() >= characterData.dialogs.Length)
+            if (GetCurrentState() > characterData.dialogs[_currentState].enableDialogAtStage)
             {
                 return;
             }

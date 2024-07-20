@@ -7,6 +7,9 @@ namespace Dialog
 {
     public class DialogBox : MonoBehaviour, IPointerClickHandler
     {
+        public Sprite narratorSprite;
+        public string narratorName;
+
         public TMP_Text dialogText;
         public Image speakerImage;
         public TMP_Text speakerName;
@@ -16,21 +19,39 @@ namespace Dialog
         public void StartDialog(IDialog dialog)
         {
             _dialog = dialog;
-            speakerName.text = dialog.GetSpeakerName();
-            speakerImage.sprite = dialog.GetSpeakerSprite();
-            dialogText.text = dialog.GetNextDialog();
+            ProcessDialog();
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        private void ProcessDialog()
         {
             if (_dialog.HasNextDialog())
             {
-                dialogText.text = _dialog.GetNextDialog();
+                var text = _dialog.GetNextDialog();
+
+                // Narrator detection
+                if (text.StartsWith("+"))
+                {
+                    text = text[1..];
+                    speakerName.text = narratorName;
+                    speakerImage.sprite = narratorSprite;
+                }
+                else
+                {
+                    speakerName.text = _dialog.GetSpeakerName();
+                    speakerImage.sprite = _dialog.GetSpeakerSprite();
+                }
+
+                dialogText.text = text;
             }
             else
             {
                 DialogManager.Instance.EndDialog();
             }
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            ProcessDialog();
         }
     }
 }

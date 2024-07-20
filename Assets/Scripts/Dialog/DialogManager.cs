@@ -20,7 +20,6 @@ namespace Dialog
             }
         }
 
-
         public bool IsDialogActive => dialogBox.gameObject.activeSelf;
 
         public void StartDialog(IDialog dialogData)

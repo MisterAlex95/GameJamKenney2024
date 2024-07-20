@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Dialog;
 using Journal;
 using Sound;
 using TMPro;
@@ -36,7 +37,7 @@ namespace Core
             SetMoveDisabled(true);
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
-            StartCoroutine(Introduction());
+            // StartCoroutine(Introduction());
         }
 
         #region Transitions

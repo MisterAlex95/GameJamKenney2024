@@ -8,8 +8,10 @@ namespace Dialog
     {
         public bool looping = false;
         public int enableDialogAtStage = 0;
+
         public Sprite speakerSprite;
         public string speakerName;
+        
         public List<string> dialogText = new();
     }
 }
