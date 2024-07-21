@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Character;
 using Core;
 using Dialog;
 using TMPro;
@@ -39,18 +40,40 @@ namespace Journal
         private bool _hasCheckTheLetter = false;
         private readonly List<JournalActivityName> _unlockedActivities = new();
 
-        private readonly Dictionary<string, List<JournalActivityName>> _journalActivities =
+        private readonly Dictionary<CharacterName, List<JournalActivityName>> _journalActivities =
             new()
             {
                 {
-                    "A",
+                    CharacterName.Daniel,
                     new List<JournalActivityName>
                     {
-                        JournalActivityName.Sleep,
-                        JournalActivityName.Sleep,
-                        JournalActivityName.Sleep,
-                        JournalActivityName.Sleep,
-                        JournalActivityName.Eat,
+                        JournalActivityName.Breakfast,
+                        JournalActivityName.Cleaning,
+                        JournalActivityName.Reading,
+                        JournalActivityName.Reading,
+                        JournalActivityName.Restaurant,
+                    }
+                },
+                {
+                    CharacterName.Ian,
+                    new List<JournalActivityName>
+                    {
+                        JournalActivityName.Sleeping,
+                        JournalActivityName.Sleeping,
+                        JournalActivityName.Cooking,
+                        JournalActivityName.Cooking,
+                        JournalActivityName.Lunch,
+                    }
+                },
+                {
+                    CharacterName.Livia,
+                    new List<JournalActivityName>
+                    {
+                        JournalActivityName.Breakfast,
+                        JournalActivityName.Cinema,
+                        JournalActivityName.Cinema,
+                        JournalActivityName.Cinema,
+                        JournalActivityName.Lunch,
                     }
                 }
             };
@@ -171,6 +194,10 @@ namespace Journal
             if (!_unlockedActivities.Contains(activity))
             {
                 _unlockedActivities.Add(activity);
+            }
+            else
+            {
+                return;
             }
 
             var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();

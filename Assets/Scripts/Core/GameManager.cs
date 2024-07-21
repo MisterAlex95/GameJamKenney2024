@@ -225,32 +225,42 @@ namespace Core
                     JournalManager.Instance.AddObjectClue("- A lot of fresh food was cooked recently.");
                     break;
                 case TriggerActionName.Add_Diner_To_Clues:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     JournalManager.Instance.AddObjectClue("- Only two people ate here for lunch.");
                     break;
                 case TriggerActionName.Add_Livia_Morning:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Breakfast);
                     JournalManager.Instance.AddDialogClue(
                         "- Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.");
                     JournalManager.Instance.AddDialogClue(
                         "- Livia discovered Maddy at 1pm when she went answering her ringing phone.");
                     break;
                 case TriggerActionName.Add_Livia_Cinema:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Movies);
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     JournalManager.Instance.AddDialogClue(
                         "- Livia went to the 9.30am film show and came back right after it.");
                     break;
                 case TriggerActionName.Add_Ian_Morning:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Sleeping);
                     JournalManager.Instance.AddDialogClue(
                         "- Ian slept until he was disturbed by noises coming from the ground floor.");
                     break;
                 case TriggerActionName.Add_Ian_Cooking:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     SetCharacterState(CharacterName.Daniel, 3);
                     JournalManager.Instance.AddDialogClue(
                         "- Ian cooked a lot of food and then ate lunch with Livia.");
                     break;
                 case TriggerActionName.Add_Daniel_Lunch:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Restaurant);
                     JournalManager.Instance.AddDialogClue(
                         "- Daniel ate a big lunch at the restaurant with his friend Norah.");
                     break;
                 case TriggerActionName.Add_Daniel_Cleaning:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Cleaning);
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Cooking);
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Reading);
                     JournalManager.Instance.AddDialogClue(
                         "- Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.");
                     break;
@@ -263,6 +273,7 @@ namespace Core
                         "- The killer was in a hurry.");
                     break;
                 case TriggerActionName.Add_Livia_Tickets:
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Movies);
                     ProcessTriggerAction(TriggerActionName.Tickets_Appear);
                     JournalManager.Instance.MakeTicketParkingAppear();
                     JournalManager.Instance.MakeTicketCinemaAppear();

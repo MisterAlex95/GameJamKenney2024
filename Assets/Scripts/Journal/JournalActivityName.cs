@@ -3,12 +3,15 @@
     public enum JournalActivityName
     {
         None,
-        Sleep,
-        Cinema,
-        Eat,
-        Read,
-        Clean,
-        Cook,
+        Breakfast,
+        Sleeping,
+        Cleaning,
+        Movies,
+        Reading,
+        Cooking,
+        Lunch,
+        Restaurant,
+        Cinema
     }
 
     public static class JournalActivityNameExtensions
@@ -18,12 +21,15 @@
             return activity switch
             {
                 JournalActivityName.None => "None",
-                JournalActivityName.Sleep => "Sleep",
+                JournalActivityName.Breakfast => "Breakfast",
+                JournalActivityName.Sleeping => "Sleeping",
+                JournalActivityName.Cleaning => "Cleaning",
+                JournalActivityName.Movies => "Movies",
+                JournalActivityName.Reading => "Reading",
+                JournalActivityName.Cooking => "Cooking",
+                JournalActivityName.Lunch => "Lunch",
+                JournalActivityName.Restaurant => "Restaurant",
                 JournalActivityName.Cinema => "Cinema",
-                JournalActivityName.Eat => "Eat",
-                JournalActivityName.Read => "Read",
-                JournalActivityName.Clean => "Clean",
-                JournalActivityName.Cook => "Cook",
                 _ => "Unknown"
             };
         }

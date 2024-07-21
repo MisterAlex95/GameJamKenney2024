@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Character;
 using TMPro;
 using UnityEngine;
 
@@ -7,7 +8,7 @@ namespace Journal
     public class JournalActivity : MonoBehaviour
     {
         private TMP_Dropdown _dropdown;
-        public string characterName;
+        public CharacterName characterName;
         public int activityHour;
 
         private void Start()
