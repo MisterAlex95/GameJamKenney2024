@@ -227,6 +227,34 @@ namespace Core
                 case TriggerActionName.Add_Diner_To_Clues:
                     JournalManager.Instance.AddObjectClue("- Only two people ate here for lunch.");
                     break;
+                case TriggerActionName.Add_Livia_Morning:
+                    JournalManager.Instance.AddDialogClue(
+                        "- Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.");
+                    JournalManager.Instance.AddDialogClue(
+                        "- Livia discovered Maddy at 1pm when she went answering her ringing phone.");
+                    break;
+                case TriggerActionName.Add_Livia_Cinema:
+                    JournalManager.Instance.AddDialogClue(
+                        "- Livia went to the 9.30am film show and came back right after it.");
+                    break;
+                case TriggerActionName.Add_Ian_Morning:
+                    JournalManager.Instance.AddDialogClue(
+                        "- Ian slept until he was disturbed by noises coming from the ground floor.");
+                    break;
+                case TriggerActionName.Add_Ian_Cooking:
+                    SetCharacterState(CharacterName.Daniel, 3);
+                    JournalManager.Instance.AddDialogClue(
+                        "- Ian cooked a lot of food and then ate lunch with Livia.");
+                    break;
+                case TriggerActionName.Add_Daniel_Lunch:
+                    JournalManager.Instance.AddDialogClue(
+                        "- Daniel ate a big lunch at the restaurant with his friend Norah.");
+                    break;
+                case TriggerActionName.Add_Daniel_Cleaning:
+                    JournalManager.Instance.AddDialogClue(
+                        "- Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.");
+                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
             }

@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4c162d56d43470ba0fe4b13b56c8d73, type: 3}
-  m_Name: Daniel_Pumin_1
+  m_Name: Daniel_Pumin_3
   m_EditorClassIdentifier: 
   looping: 0
-  enableDialogAtStage: 1
+  enableDialogAtStage: 3
   increaseStageOnDialogEnd: 1
   characterToIncreaseStage: 1
-  triggerActionName: 14
+  triggerActionName: 13
   speakerSprite: {fileID: 21300000, guid: c9205a94771dcea418121aa994343ebf, type: 3}
   speakerName: Daniel
   dialogText:
-  - +Thanks for that. We have some questions for you.
-  - +What did you do this morning before the body was found?
-  - I did a pretty heavy clean of the ground floor before taking about two hours
-    to read my book.
-  - 'Ian needed the kitchen, so it was better to let him the space to cook. But I
-    stayed with him so we can have some time together. '
-  - '+Ok, thanks. We will come back if you have more questions more you. '
+  - +We need a bit more elements from you. We only saw tablewares for two in the
+    living room. Where did you eat for lunch?
+  - "Indeed, I didn\u2019t had lunch here today. I went to the restaurant in town
+    with my friend Norah at noon and only came back at 1.10pm after I got a call
+    from Ian telling me about Maddy."
+  - +Do you have any receipt to prove it?
+  - Unfortunately no, Norah paid for me as I was in a hurry.

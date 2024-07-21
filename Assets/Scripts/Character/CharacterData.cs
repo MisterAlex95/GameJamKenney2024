@@ -1,5 +1,4 @@
-﻿using Core;
-using Dialog;
+﻿using Dialog;
 using UnityEngine;
 
 namespace Character

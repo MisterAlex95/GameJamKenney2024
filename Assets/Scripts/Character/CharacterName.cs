@@ -4,7 +4,8 @@
     {
         Camden,
         Daniel,
-        Livia
+        Livia,
+        Ian
     };
 
     // Get string value of enum
@@ -17,6 +18,7 @@
                 CharacterName.Camden => "Camden",
                 CharacterName.Daniel => "Daniel",
                 CharacterName.Livia => "Livia",
+                CharacterName.Ian => "Ian",
                 _ => "Unknown"
             };
         }

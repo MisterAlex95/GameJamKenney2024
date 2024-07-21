@@ -14,7 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   looping: 0
   enableDialogAtStage: 0
+  increaseStageOnDialogEnd: 1
+  characterToIncreaseStage: 2
+  triggerActionName: 9
   speakerSprite: {fileID: 21300000, guid: fa077589ebae1c44098754ff4b9ac781, type: 3}
+  speakerName: Livia
   dialogText:
-  - A
-  - B
+  - +Hello, we are Alex and Mary from Camden.
+  - "Hello, I\u2019m Livia Sumner. How can I help you?"
+  - '+We are investigating on Ms. Thomas murder and need to ask you some questions. '
+  - Actually I woke up around 8am and went downstairs to have breakfast with my friend
+    Daniel. Before leaving Maddy was still sleeping in the bed.
+  - +The Police told us that you were the one who discovered the corpse. Can you
+    tell us a bit more about that?
+  - "Sure, I was eating lunch with Ian when I heard my phone ringing in the guest
+    room. I went up and that\u2019s when I discovered Maddy."

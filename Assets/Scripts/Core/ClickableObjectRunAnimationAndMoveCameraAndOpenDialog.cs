@@ -37,12 +37,10 @@ namespace Core
             DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData),
                 () =>
                 {
-                    if (!_alreadyTriggered)
-                    {
-                        GameManager.Instance.ProcessTriggerAction(triggerActionName);
-                    }
+                    if (_alreadyTriggered) return;
+                    GameManager.Instance.ProcessTriggerAction(triggerActionName);
+                    _alreadyTriggered = true;
                 });
-            _alreadyTriggered = true;
         }
     }
 }

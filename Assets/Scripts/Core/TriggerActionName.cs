@@ -11,5 +11,11 @@
         Add_Foot_Print_To_Clues,
         Add_Fridge_To_Clues,
         Add_Diner_To_Clues,
+        Add_Livia_Morning,
+        Add_Livia_Cinema,
+        Add_Ian_Morning,
+        Add_Ian_Cooking,
+        Add_Daniel_Lunch,
+        Add_Daniel_Cleaning,
     }
 }
