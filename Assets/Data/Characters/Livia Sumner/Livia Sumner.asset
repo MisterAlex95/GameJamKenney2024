@@ -15,4 +15,6 @@ MonoBehaviour:
   characterName: 2
   dialogs:
   - {fileID: 11400000, guid: 39708fbfd071b744db56657e061de27d, type: 2}
+  - {fileID: 11400000, guid: 798cf5fd5a7744a45b881867f6f29012, type: 2}
   - {fileID: 11400000, guid: 955b37a25a1812740a262b389fc246af, type: 2}
+  - {fileID: 11400000, guid: 3b049cf82949b6945bc4e13dbddad1a3, type: 2}
