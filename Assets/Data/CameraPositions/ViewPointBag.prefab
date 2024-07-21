@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1522662259189935076
+--- !u!1 &437296359398967571
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6705665470211915232}
+  - component: {fileID: 9203155251925327962}
   m_Layer: 0
-  m_Name: ViewPointRoom_2
+  m_Name: ViewPointBag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6705665470211915232
+--- !u!4 &9203155251925327962
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522662259189935076}
+  m_GameObject: {fileID: 437296359398967571}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.05854364, y: -0.6293607, z: 0.049725402, w: 0.77330804}
-  m_LocalPosition: {x: 0.4907573, y: 1.6213424, z: 0.34135443}
+  m_LocalRotation: {x: 0.09409791, y: -0.09898986, z: 0.011026382, w: 0.99056804}
+  m_LocalPosition: {x: -0.25166988, y: 1.2465538, z: 0.8585893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

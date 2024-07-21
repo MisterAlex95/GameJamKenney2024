@@ -256,7 +256,18 @@ namespace Core
                     break;
                 case TriggerActionName.Add_Poison_Clue:
                     JournalManager.Instance.AddObjectClue(
-                        "- Found a poisoned spoon in the dryer");
+                        "- The killer was in a hurry.");
+                    break;
+                case TriggerActionName.Add_Evidence:
+                    JournalManager.Instance.AddObjectClue(
+                        "- The killer was in a hurry.");
+                    break;
+                case TriggerActionName.Add_Livia_Tickets:
+                    ProcessTriggerAction(TriggerActionName.Tickets_Appear);
+                    JournalManager.Instance.MakeTicketParkingAppear();
+                    JournalManager.Instance.MakeTicketCinemaAppear();
+                    JournalManager.Instance.AddObjectClue(
+                        "- Livia went to the movies between 9.15am and 11.40am.");
                     break;
 
                 default:

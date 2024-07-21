@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4c162d56d43470ba0fe4b13b56c8d73, type: 3}
-  m_Name: Poison
+  m_Name: SInkDialog
   m_EditorClassIdentifier: 
   looping: 1
   enableDialogAtStage: 0
   increaseStageOnDialogEnd: 0
   characterToIncreaseStage: 0
-  triggerActionName: 15
+  triggerActionName: 16
   speakerSprite: {fileID: 0}
   speakerName: 
   dialogText:
-  - "+The killer didn\u2019t really took time to hide the murder."
+  - +This needs to go to the police as evidence.

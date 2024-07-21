@@ -10,6 +10,8 @@
         Bedroom_1,
         Bedroom_2,
         Stairs,
-        Dryer
+        Dryer,
+        Sink,
+        Bag
     }
 }

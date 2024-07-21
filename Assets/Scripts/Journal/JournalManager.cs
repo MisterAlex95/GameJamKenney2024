@@ -31,6 +31,9 @@ namespace Journal
         [Header("Ticket")] public GameObject ticketContainer;
         public Button ticketButton;
         public GameObject ticketButtonContainer;
+        public GameObject ticketCinema;
+        public GameObject ticketParking;
+        public GameObject ticketRestaurant;
 
 
         private bool _hasCheckTheLetter = false;
@@ -139,6 +142,22 @@ namespace Journal
         {
             journalButton.SetActive(true);
         }
+
+        public void MakeTicketRestaurantAppear()
+        {
+            ticketRestaurant.SetActive(true);
+        }
+
+        public void MakeTicketParkingAppear()
+        {
+            ticketParking.SetActive(true);
+        }
+
+        public void MakeTicketCinemaAppear()
+        {
+            ticketCinema.SetActive(true);
+        }
+
 
         public void MakeTicketButtonAppear()
         {

@@ -20,4 +20,5 @@ MonoBehaviour:
   speakerSprite: {fileID: 21300000, guid: c9205a94771dcea418121aa994343ebf, type: 3}
   speakerName: Daniel
   dialogText:
-  - Let me a bit of time please, it is a hard day.
+  - "Let me a bit of time please, it is a hard day, but don\u2019t hesitate to go
+    around the house in the meantime."
