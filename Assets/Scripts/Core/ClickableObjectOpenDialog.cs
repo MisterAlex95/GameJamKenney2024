@@ -24,7 +24,7 @@ namespace Core
             if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance().GetCameraPosition())) return;
 
             if (!dialogData.looping && _alreadyTriggered) return;
-            if (dialogData.enableDialogAtStage < GameManager.Instance.GetCharacterState(CharacterName.Camden)) return;
+            if (dialogData.enableDialogAtStage > GameManager.Instance.GetCharacterState(CharacterName.Camden)) return;
 
             DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData));
             _alreadyTriggered = true;
