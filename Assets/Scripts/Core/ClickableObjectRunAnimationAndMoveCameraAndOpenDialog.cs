@@ -35,7 +35,13 @@ namespace Core
             if (dialogData.enableDialogAtStage > GameManager.Instance.GetCharacterState(CharacterName.Camden)) return;
 
             DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData),
-                () => { GameManager.Instance.ProcessTriggerAction(triggerActionName); });
+                () =>
+                {
+                    if (!_alreadyTriggered)
+                    {
+                        GameManager.Instance.ProcessTriggerAction(triggerActionName);
+                    }
+                });
             _alreadyTriggered = true;
         }
     }

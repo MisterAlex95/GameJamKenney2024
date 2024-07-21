@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FridgeDialog
   m_EditorClassIdentifier: 
   looping: 1
-  enableDialogAtStage: 0
+  enableDialogAtStage: 1
   increaseStageOnDialogEnd: 0
   characterToIncreaseStage: 0
   triggerActionName: 0

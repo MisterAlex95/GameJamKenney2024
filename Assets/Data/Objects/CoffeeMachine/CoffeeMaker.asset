@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: CoffeeMaker
   m_EditorClassIdentifier: 
   looping: 1
-  enableDialogAtStage: 0
+  enableDialogAtStage: 1
+  increaseStageOnDialogEnd: 0
+  characterToIncreaseStage: 0
+  triggerActionName: 0
   speakerSprite: {fileID: 21300000, guid: 86f7be7814af82f479e73426d838b648, type: 3}
   speakerName: Coffe Machine
   dialogText:
-  - This coffee looks very tasty.
+  - +This coffee looks very tasty.
