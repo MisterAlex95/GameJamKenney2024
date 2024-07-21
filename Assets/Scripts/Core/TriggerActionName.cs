@@ -17,5 +17,6 @@
         Add_Ian_Cooking,
         Add_Daniel_Lunch,
         Add_Daniel_Cleaning,
+        Add_Poison_Clue
     }
 }

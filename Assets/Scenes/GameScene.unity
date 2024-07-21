@@ -1556,7 +1556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6080497717079826713, guid: 18a77ffe0871a4a449dad2b467f7211e, type: 3}
       propertyPath: cameraPositions.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6080497717079826713, guid: 18a77ffe0871a4a449dad2b467f7211e, type: 3}
       propertyPath: 'cameraPositions.Array.data[4]'
@@ -1574,6 +1574,10 @@ PrefabInstance:
       propertyPath: 'cameraPositions.Array.data[7]'
       value: 
       objectReference: {fileID: 11400000, guid: ddd43b3e96b6d944aa89618bfc54f6d8, type: 2}
+    - target: {fileID: 6080497717079826713, guid: 18a77ffe0871a4a449dad2b467f7211e, type: 3}
+      propertyPath: 'cameraPositions.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 498eec01e4fe8eb49afa646ed2b68064, type: 2}
     - target: {fileID: 8704203829916767338, guid: 18a77ffe0871a4a449dad2b467f7211e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 465.1502
@@ -2035,10 +2039,6 @@ PrefabInstance:
     - target: {fileID: 2960256701898969224, guid: 5aba5a6ec45f5b44c9361436b7cab157, type: 3}
       propertyPath: m_Name
       value: BathRoom
-      objectReference: {fileID: 0}
-    - target: {fileID: 5764977773703370128, guid: 5aba5a6ec45f5b44c9361436b7cab157, type: 3}
-      propertyPath: cameraPositionName
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5840301645822810914, guid: 5aba5a6ec45f5b44c9361436b7cab157, type: 3}
       propertyPath: m_LocalPosition.x

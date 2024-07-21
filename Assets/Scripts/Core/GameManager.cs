@@ -254,6 +254,10 @@ namespace Core
                     JournalManager.Instance.AddDialogClue(
                         "- Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.");
                     break;
+                case TriggerActionName.Add_Poison_Clue:
+                    JournalManager.Instance.AddObjectClue(
+                        "- Found a poisoned spoon in the dryer");
+                    break;
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
