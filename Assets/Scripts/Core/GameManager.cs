@@ -61,7 +61,7 @@ namespace Core
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
             SetCharacterState(CharacterName.Camden, _currentState);
 
-            // StartCoroutine(Introduction());
+            StartCoroutine(Introduction());
         }
 
         #region Transitions

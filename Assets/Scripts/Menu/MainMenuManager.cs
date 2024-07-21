@@ -1,3 +1,4 @@
+using System;
 using EasyTransition;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace Menu
         public TransitionSettings transitionSettings;
         private TransitionManager _transitionManager;
 
+        public GameObject creditPage;
+
         private void Start()
         {
             Screen.orientation = ScreenOrientation.LandscapeLeft;
@@ -17,6 +20,16 @@ namespace Menu
         public void PlayGame()
         {
             _transitionManager.Transition("MailScene", transitionSettings, 0);
+        }
+
+        public void OpenCreditPage()
+        {
+            creditPage.SetActive(true);
+        }
+
+        public void CloseCreditPage()
+        {
+            creditPage.SetActive(false);
         }
 
         public void QuitGame()
