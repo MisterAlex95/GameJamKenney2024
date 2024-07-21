@@ -14,8 +14,7 @@ namespace Core
 {
     public class GameManager : MonoBehaviour
     {
-        [Header("Introduction")]
-        public GameObject blackScreen;
+        [Header("Introduction")] public GameObject blackScreen;
         public GameObject letterScreen;
         private Image _blackScreenImage;
         private TMP_Text _blackScreenText;
@@ -23,15 +22,13 @@ namespace Core
         private readonly Dictionary<CharacterName, int> _characterState = new();
 
         // Modal Variables
-        [Header("Modal")]
-        public GameObject modalScreen;
+        [Header("Modal")] public GameObject modalScreen;
         private bool _isModalActive;
         private TMP_Text _modalText;
         private Action _modalCloseAction;
 
         // Letter Variables
-        [Header("Letter")]
-        public GameObject letterToSpawn;
+        [Header("Letter")] public GameObject letterToSpawn;
         public Transform positionToSpawnLetter;
         private bool _isPrintingFinished;
         private string _textLetter;
@@ -56,7 +53,7 @@ namespace Core
             _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
-            StartCoroutine(Introduction());
+            // StartCoroutine(Introduction());
         }
 
         #region Transitions
