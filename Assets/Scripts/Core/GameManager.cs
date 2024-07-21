@@ -310,7 +310,8 @@ namespace Core
                     break;
 
                 case TriggerActionName.End_Game:
-
+                    EndGame();
+                    break;
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
