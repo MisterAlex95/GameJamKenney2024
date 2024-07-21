@@ -21,8 +21,12 @@ namespace Journal
         [Header("Clues")] public GameObject cluesContainer;
         public Button cluesButton;
 
-        [Header("Inventory")] public GameObject inventoryContainer;
-        public Button inventoryButton;
+        [Header("Letter")] public GameObject letterContainer;
+        public Button letterButton;
+
+        [Header("Ticket")] public GameObject ticketContainer;
+        public Button ticketButton;
+        public GameObject ticketButtonContainer;
 
         private readonly List<JournalActivityName> _unlockedActivities = new();
 
@@ -60,7 +64,8 @@ namespace Journal
         {
             planningButton.onClick.AddListener(TogglePlanning);
             cluesButton.onClick.AddListener(ToggleClues);
-            inventoryButton.onClick.AddListener(ToggleInventory);
+            letterButton.onClick.AddListener(ToggleLetter);
+            ticketButton.onClick.AddListener(ToggleTicket);
         }
 
         private void TogglePlanning()
@@ -68,7 +73,7 @@ namespace Journal
             if (planningContainer.activeSelf || DialogManager.Instance.IsDialogActive) return;
             planningContainer.SetActive(true);
             cluesContainer.SetActive(false);
-            inventoryContainer.SetActive(false);
+            letterContainer.SetActive(false);
             mainContainer.SetActive(false);
         }
 
@@ -77,14 +82,24 @@ namespace Journal
             if (cluesContainer.activeSelf || DialogManager.Instance.IsDialogActive) return;
             cluesContainer.SetActive(true);
             planningContainer.SetActive(false);
-            inventoryContainer.SetActive(false);
+            letterContainer.SetActive(false);
             mainContainer.SetActive(false);
         }
 
-        private void ToggleInventory()
+        private void ToggleLetter()
         {
-            if (inventoryContainer.activeSelf || DialogManager.Instance.IsDialogActive) return;
-            inventoryContainer.SetActive(true);
+            if (letterContainer.activeSelf || DialogManager.Instance.IsDialogActive) return;
+            letterContainer.SetActive(true);
+            planningContainer.SetActive(false);
+            cluesContainer.SetActive(false);
+            mainContainer.SetActive(false);
+        }
+
+        private void ToggleTicket()
+        {
+            if (ticketContainer.activeSelf || DialogManager.Instance.IsDialogActive) return;
+            ticketContainer.SetActive(true);
+            letterContainer.SetActive(false);
             planningContainer.SetActive(false);
             cluesContainer.SetActive(false);
             mainContainer.SetActive(false);
@@ -99,7 +114,8 @@ namespace Journal
                 mainContainer.SetActive(true);
                 planningContainer.SetActive(false);
                 cluesContainer.SetActive(false);
-                inventoryContainer.SetActive(false);
+                letterContainer.SetActive(false);
+                ticketContainer.SetActive(false);
             }
             else
                 journalContainer.SetActive(false);
@@ -109,6 +125,11 @@ namespace Journal
         public void MakeJournalButtonAppear()
         {
             journalButton.SetActive(true);
+        }
+
+        public void MakeTicketButtonAppear()
+        {
+            ticketButtonContainer.SetActive(true);
         }
 
         public bool IsJournalActive => journalContainer.activeSelf;

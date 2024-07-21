@@ -176,7 +176,8 @@ namespace Core
 
         public void SetMoveDisabled(bool isDisabled)
         {
-            foreach (var arrowMove in FindObjectsOfType<ArrowMove>())
+            var arrowsMove = FindObjectsByType<ArrowMove>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            foreach (var arrowMove in arrowsMove)
             {
                 arrowMove.gameObject.SetActive(!isDisabled);
             }
