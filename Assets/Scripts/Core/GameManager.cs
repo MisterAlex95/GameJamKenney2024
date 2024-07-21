@@ -33,6 +33,9 @@ namespace Core
         private bool _isPrintingFinished;
         private string _textLetter;
 
+        private CharacterData _characterData;
+        private int _currentState = 0;
+
         public static GameManager Instance { get; private set; }
 
         private void Awake()
@@ -53,6 +56,8 @@ namespace Core
             _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
+            SetCharacterState(CharacterName.Camden, _currentState);
+
             // StartCoroutine(Introduction());
         }
 
@@ -195,6 +200,19 @@ namespace Core
                 case TriggerActionName.Enable_Notebook:
                     JournalManager.Instance.MakeJournalButtonAppear();
                     break;
+                case TriggerActionName.Tickets_Appear:
+                    JournalManager.Instance.MakeTicketButtonAppear();
+                    break;
+                case TriggerActionName.Enable_Foot_Print:
+                    if (GetCharacterState(CharacterName.Camden) == 0)
+                    {
+                        SetCharacterState(CharacterName.Camden, 1);
+                    }
+
+                    break;
+                case TriggerActionName.Enable_Movements:
+                    SetMoveDisabled(false);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
             }
@@ -203,6 +221,15 @@ namespace Core
         #endregion
 
         #region Character State
+
+        private int GetCurrentState()
+        {
+            var newState = GameManager.Instance.GetCharacterState(_characterData.characterName);
+            if (newState == _currentState) return _currentState;
+
+            _currentState = newState;
+            return _currentState;
+        }
 
         public void SetCharacterState(CharacterName characterName, int state)
         {
@@ -229,6 +256,15 @@ namespace Core
             foreach (var character in _characterState.Keys.ToList())
             {
                 _characterState[character] = 0;
+            }
+        }
+
+        [ContextMenu("Print Character State")]
+        public void PrintCharacterState()
+        {
+            foreach (var character in _characterState.Keys.ToList())
+            {
+                Debug.Log($"{character}: {_characterState[character]}");
             }
         }
 

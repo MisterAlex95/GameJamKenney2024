@@ -3,7 +3,10 @@
     public enum TriggerActionName
     {
         None,
-        Letter_Appear,
         Enable_Notebook,
+        Letter_Appear,
+        Tickets_Appear,
+        Enable_Foot_Print,
+        Enable_Movements
     }
 }

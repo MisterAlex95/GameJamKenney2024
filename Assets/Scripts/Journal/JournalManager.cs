@@ -93,6 +93,8 @@ namespace Journal
             planningContainer.SetActive(false);
             cluesContainer.SetActive(false);
             mainContainer.SetActive(false);
+
+            GameManager.Instance.ProcessTriggerAction(TriggerActionName.Enable_Foot_Print);
         }
 
         private void ToggleTicket()
@@ -104,7 +106,6 @@ namespace Journal
             cluesContainer.SetActive(false);
             mainContainer.SetActive(false);
         }
-
 
         public void ToggleJournal()
         {
@@ -120,7 +121,6 @@ namespace Journal
             else
                 journalContainer.SetActive(false);
         }
-
 
         public void MakeJournalButtonAppear()
         {
