@@ -5,6 +5,10 @@
         Kitchen,
         LivingRoom,
         Hall,
-        Fridge
+        Fridge,
+        Bathroom,
+        Bedroom_1,
+        Bedroom_2,
+        Stairs,
     }
 }
