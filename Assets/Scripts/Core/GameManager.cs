@@ -56,7 +56,7 @@ namespace Core
             _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
-            // StartCoroutine(Introduction());
+            StartCoroutine(Introduction());
         }
 
         #region Transitions
