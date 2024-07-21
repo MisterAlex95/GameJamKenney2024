@@ -10,6 +10,7 @@ namespace Core
     public class ClickableObjectOpenDialog : MonoBehaviour
     {
         public List<CameraPositionName> canBeTriggerFromCameraPositions;
+        public TriggerActionName triggerActionName;
         public DialogData dialogData;
         private bool _alreadyTriggered = false;
 
@@ -26,7 +27,8 @@ namespace Core
             if (!dialogData.looping && _alreadyTriggered) return;
             if (dialogData.enableDialogAtStage > GameManager.Instance.GetCharacterState(CharacterName.Camden)) return;
 
-            DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData));
+            DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData),
+                () => { GameManager.Instance.ProcessTriggerAction(triggerActionName); });
             _alreadyTriggered = true;
         }
     }

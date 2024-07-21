@@ -453,6 +453,7 @@ MonoBehaviour:
   canBeTriggerFromCameraPositions: 0000000003000000
   cameraPositionName: 3
   dialogData: {fileID: 11400000, guid: c701dd6ca5d23c4448bd6f504bb8bfa8, type: 2}
+  triggerActionName: 7
   triggerName: isOpen
   state: 0
 --- !u!1 &9142362822455002105

@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTriggerFromCameraPositions: 02000000
+  triggerActionName: 6
   dialogData: {fileID: 11400000, guid: 9fa18989fa71eef4992f608ceab2190f, type: 2}
 --- !u!1001 &2518788936464987299
 PrefabInstance:

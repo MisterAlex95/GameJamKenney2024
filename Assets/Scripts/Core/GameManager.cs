@@ -213,6 +213,15 @@ namespace Core
                 case TriggerActionName.Enable_Movements:
                     SetMoveDisabled(false);
                     break;
+                case TriggerActionName.Add_Foot_Print_To_Clues:
+                    JournalManager.Instance.AddObjectClue("- The floor is still a bit dirty despite the heavy clean.");
+                    break;
+                case TriggerActionName.Add_Fridge_To_Clues:
+                    JournalManager.Instance.AddObjectClue("- A lot of fresh food was cooked recently.");
+                    break;
+                case TriggerActionName.Add_Diner_To_Clues:
+                    JournalManager.Instance.AddObjectClue("- Only two people ate here for lunch.");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
             }

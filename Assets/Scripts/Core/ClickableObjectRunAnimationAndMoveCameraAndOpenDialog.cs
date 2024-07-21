@@ -12,6 +12,7 @@ namespace Core
         public List<CameraPositionName> canBeTriggerFromCameraPositions;
         public CameraPositionName cameraPositionName;
         public DialogData dialogData;
+        public TriggerActionName triggerActionName;
         private bool _alreadyTriggered = false;
         public string triggerName;
         public bool state = false;
@@ -33,7 +34,8 @@ namespace Core
             if (!dialogData.looping && _alreadyTriggered) return;
             if (dialogData.enableDialogAtStage > GameManager.Instance.GetCharacterState(CharacterName.Camden)) return;
 
-            DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData));
+            DialogManager.Instance.StartDialog(new Dialog.Dialog(dialogData),
+                () => { GameManager.Instance.ProcessTriggerAction(triggerActionName); });
             _alreadyTriggered = true;
         }
     }

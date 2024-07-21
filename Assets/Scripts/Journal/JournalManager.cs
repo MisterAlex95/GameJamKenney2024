@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Core;
 using Dialog;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,10 @@ namespace Journal
         public Button planningButton;
 
         [Header("Clues")] public GameObject cluesContainer;
+        public GameObject dialogCluesContainer;
+        public GameObject objectCluesContainer;
         public Button cluesButton;
+        public GameObject clueTextPrefab;
 
         [Header("Letter")] public GameObject letterContainer;
         public Button letterButton;
@@ -148,6 +152,20 @@ namespace Journal
                 var previousValue = characterActivity.GetDropdownValue();
                 characterActivity.UpdateDropdownOptions(_unlockedActivities, previousValue);
             }
+        }
+
+        public void AddDialogClue(string clue)
+        {
+            var dialogClue = Instantiate(clueTextPrefab,
+                dialogCluesContainer.transform);
+            dialogClue.GetComponentInChildren<TMP_Text>().text = clue;
+        }
+
+        public void AddObjectClue(string clue)
+        {
+            var dialogClue = Instantiate(clueTextPrefab,
+                objectCluesContainer.transform);
+            dialogClue.GetComponentInChildren<TMP_Text>().text = clue;
         }
 
         public void CheckJournal()
