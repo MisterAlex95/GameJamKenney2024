@@ -261,6 +261,8 @@ namespace Core
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cleaning);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cooking);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Reading);
+                    JournalManager.Instance.AddObjectClue(
+                        "- Maddy Thomas was killed between 8am and 1pm.");
                     JournalManager.Instance.AddDialogClue(
                         "- Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.");
                     break;
