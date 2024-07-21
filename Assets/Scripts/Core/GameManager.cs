@@ -8,6 +8,7 @@ using Journal;
 using Sound;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Core
@@ -18,6 +19,8 @@ namespace Core
         public GameObject letterScreen;
         private Image _blackScreenImage;
         private TMP_Text _blackScreenText;
+
+        [Header("EndGame")] public GameObject endGameScreen;
 
         private readonly Dictionary<CharacterName, int> _characterState = new();
 
@@ -112,6 +115,24 @@ namespace Core
             }
 
             blackScreen.SetActive(false);
+        }
+
+        private IEnumerator EndGame()
+        {
+            yield return new WaitForSeconds(2f);
+            float time = 0;
+
+            var endScreenImage = endGameScreen.GetComponent<Image>();
+            // Display Message
+            while (time < 1f)
+            {
+                time += Time.deltaTime;
+                endScreenImage.color = new Color(0, 0, 0, 0 + time);
+                yield return null;
+            }
+
+            endGameScreen.SetActive(true);
+            GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(0));
         }
 
         public void OpenLetter(Action action)
@@ -287,6 +308,9 @@ namespace Core
                     var daniel = GameObject.Find("Daniel Pumin");
                     daniel.transform.rotation = Quaternion.Euler(0, 180, 0);
                     break;
+
+                case TriggerActionName.End_Game:
+
 
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);

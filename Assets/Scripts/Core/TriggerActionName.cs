@@ -20,6 +20,7 @@
         Add_Poison_Clue,
         Add_Evidence,
         Add_Livia_Tickets,
-        Planning_Correct
+        Planning_Correct,
+        End_Game
     }
 }

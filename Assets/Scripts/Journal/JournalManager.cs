@@ -36,7 +36,6 @@ namespace Journal
         public GameObject ticketParking;
         public GameObject ticketRestaurant;
 
-
         private bool _hasCheckTheLetter = false;
         private readonly List<JournalActivityName> _unlockedActivities = new();
 
