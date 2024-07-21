@@ -244,7 +244,7 @@ namespace Journal
 
                 if (checkActivities)
                 {
-                    Debug.Log("All activities are correct!");
+                    GameManager.Instance.ProcessTriggerAction(TriggerActionName.Planning_Correct);
                 }
             }
         }

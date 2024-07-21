@@ -283,6 +283,11 @@ namespace Core
                         "- Livia went to the movies between 9.15am and 11.40am.");
                     break;
 
+                case TriggerActionName.Planning_Correct:
+                    var daniel = GameObject.Find("Daniel Pumin");
+                    daniel.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
             }

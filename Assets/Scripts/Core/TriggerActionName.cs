@@ -20,5 +20,6 @@
         Add_Poison_Clue,
         Add_Evidence,
         Add_Livia_Tickets,
+        Planning_Correct
     }
 }
