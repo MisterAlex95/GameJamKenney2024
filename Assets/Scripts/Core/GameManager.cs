@@ -191,8 +191,9 @@ namespace Core
                 case TriggerActionName.Letter_Appear:
                     Instantiate(letterToSpawn, positionToSpawnLetter);
                     break;
-                case TriggerActionName.Enable_Inventory:
                 case TriggerActionName.Enable_Notebook:
+                    JournalManager.Instance.MakeJournalButtonAppear();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
             }

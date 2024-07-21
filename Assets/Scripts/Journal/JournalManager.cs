@@ -11,6 +11,8 @@ namespace Journal
     {
         public GameObject journalContainer;
 
+        [Header("Journal Button")] public GameObject journalButton;
+
         [Header("Planning")] public GameObject mainContainer;
 
         [Header("Planning")] public GameObject planningContainer;
@@ -103,6 +105,11 @@ namespace Journal
                 journalContainer.SetActive(false);
         }
 
+
+        public void MakeJournalButtonAppear()
+        {
+            journalButton.SetActive(true);
+        }
 
         public bool IsJournalActive => journalContainer.activeSelf;
 
