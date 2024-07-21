@@ -32,6 +32,8 @@ namespace Journal
         public Button ticketButton;
         public GameObject ticketButtonContainer;
 
+
+        private bool _hasCheckTheLetter = false;
         private readonly List<JournalActivityName> _unlockedActivities = new();
 
         private readonly Dictionary<string, List<JournalActivityName>> _journalActivities =
@@ -97,8 +99,7 @@ namespace Journal
             planningContainer.SetActive(false);
             cluesContainer.SetActive(false);
             mainContainer.SetActive(false);
-
-            GameManager.Instance.ProcessTriggerAction(TriggerActionName.Enable_Foot_Print);
+            _hasCheckTheLetter = true;
         }
 
         private void ToggleTicket()
@@ -123,7 +124,15 @@ namespace Journal
                 ticketContainer.SetActive(false);
             }
             else
+            {
                 journalContainer.SetActive(false);
+
+                if (_hasCheckTheLetter)
+                {
+                    // First time it opens the letter
+                    GameManager.Instance.ProcessTriggerAction(TriggerActionName.Enable_Foot_Print);
+                }
+            }
         }
 
         public void MakeJournalButtonAppear()

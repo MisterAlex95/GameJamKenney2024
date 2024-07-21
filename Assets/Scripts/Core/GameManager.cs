@@ -207,6 +207,11 @@ namespace Core
                     if (GetCharacterState(CharacterName.Camden) == 0)
                     {
                         SetCharacterState(CharacterName.Camden, 1);
+                        if (GetCharacterState(CharacterName.Daniel) == 0)
+                        {
+                            SetCharacterState(CharacterName.Daniel, 1);
+                            DialogManager.Instance.StartDialogOfCharacter(CharacterName.Daniel);
+                        }
                     }
 
                     break;

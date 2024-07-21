@@ -8,7 +8,7 @@ namespace Character
     {
         public CharacterData characterData;
         private bool _alreadyTriggered = false;
-        public int _currentState = 0;
+        private int _currentState = 0;
 
         private void Start()
         {
@@ -25,19 +25,19 @@ namespace Character
             return _currentState;
         }
 
+        public CharacterName GetCharacterName()
+        {
+            return characterData.characterName;
+        }
+
         public void OnMouseDown()
         {
             if (DialogManager.Instance.IsDialogActive) return;
 
-            if (GetCurrentState() > characterData.dialogs[_currentState].enableDialogAtStage)
-            {
-                return;
-            }
-
             var dialog = GetCurrentDialog();
             if (dialog == null) return;
-            Dialog.DialogManager.Instance.StartDialog(dialog);
             _alreadyTriggered = true;
+            Dialog.DialogManager.Instance.StartDialog(dialog);
         }
 
         private IDialog GetCurrentDialog()

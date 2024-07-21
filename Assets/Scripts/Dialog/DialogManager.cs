@@ -1,4 +1,5 @@
 ﻿using System;
+using Character;
 using Core;
 using UnityEngine;
 
@@ -38,6 +39,15 @@ namespace Dialog
             dialogBox.gameObject.SetActive(false);
             _onEnd?.Invoke();
             _onEnd = default;
+        }
+
+        public void StartDialogOfCharacter(CharacterName characterName)
+        {
+            var characters =
+                FindObjectsByType<Character.Character>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+            var character = Array.Find(characters, c => c.GetCharacterName() == characterName);
+            character?.OnMouseDown();
         }
     }
 }

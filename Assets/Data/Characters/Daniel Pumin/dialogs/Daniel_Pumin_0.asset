@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   looping: 0
   enableDialogAtStage: 0
-  increaseStageOnDialogEnd: 1
+  increaseStageOnDialogEnd: 0
   characterToIncreaseStage: 1
   triggerActionName: 2
   speakerSprite: {fileID: 21300000, guid: c9205a94771dcea418121aa994343ebf, type: 3}

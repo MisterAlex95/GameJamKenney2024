@@ -12,12 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c162d56d43470ba0fe4b13b56c8d73, type: 3}
   m_Name: Daniel_Pumin_1
   m_EditorClassIdentifier: 
-  looping: 1
+  looping: 0
   enableDialogAtStage: 1
-  increaseStageOnDialogEnd: 0
-  characterToIncreaseStage: 0
+  increaseStageOnDialogEnd: 1
+  characterToIncreaseStage: 1
   triggerActionName: 0
   speakerSprite: {fileID: 21300000, guid: c9205a94771dcea418121aa994343ebf, type: 3}
-  speakerName: 
+  speakerName: Daniel
   dialogText:
-  - Let me a bit of time please, it is a hard day.
+  - +Thanks for that. We have some questions for you.
+  - +What did you do this morning before the body was found?
+  - I did a pretty heavy clean of the ground floor before taking about two hours
+    to read my book.
+  - 'Ian needed the kitchen, so it was better to let him the space to cook. But I
+    stayed with him so we can have some time together. '
+  - '+Ok, thanks. We will come back if you have more questions more you. '
