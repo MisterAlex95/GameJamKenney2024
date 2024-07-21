@@ -1486,6 +1486,21 @@ PrefabInstance:
       addedObject: {fileID: 1261622201}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efc20bea9f8067944aea6e1906985832, type: 3}
+--- !u!1 &682530226503805217 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1018753907157611933, guid: efc20bea9f8067944aea6e1906985832, type: 3}
+  m_PrefabInstance: {fileID: 682530226503805216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &682530226503805218 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6275698842761997521, guid: efc20bea9f8067944aea6e1906985832, type: 3}
+  m_PrefabInstance: {fileID: 682530226503805216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &682530226503805219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8765651169546012135, guid: efc20bea9f8067944aea6e1906985832, type: 3}
+  m_PrefabInstance: {fileID: 682530226503805216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &725662922579979451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1783,6 +1798,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 244457293}
     - target: {fileID: 2575999045843736694, guid: 779116357c7a07841898396b93d99101, type: 3}
+      propertyPath: ticketCinema
+      value: 
+      objectReference: {fileID: 682530226503805219}
+    - target: {fileID: 2575999045843736694, guid: 779116357c7a07841898396b93d99101, type: 3}
       propertyPath: journalButton
       value: 
       objectReference: {fileID: 2031431571}
@@ -1790,6 +1809,10 @@ PrefabInstance:
       propertyPath: mainContainer
       value: 
       objectReference: {fileID: 3342637503930657017}
+    - target: {fileID: 2575999045843736694, guid: 779116357c7a07841898396b93d99101, type: 3}
+      propertyPath: ticketParking
+      value: 
+      objectReference: {fileID: 682530226503805218}
     - target: {fileID: 2575999045843736694, guid: 779116357c7a07841898396b93d99101, type: 3}
       propertyPath: clueTextPrefab
       value: 
@@ -1814,6 +1837,10 @@ PrefabInstance:
       propertyPath: journalContainer
       value: 
       objectReference: {fileID: 6728624552788354504}
+    - target: {fileID: 2575999045843736694, guid: 779116357c7a07841898396b93d99101, type: 3}
+      propertyPath: ticketRestaurant
+      value: 
+      objectReference: {fileID: 682530226503805217}
     - target: {fileID: 2575999045843736694, guid: 779116357c7a07841898396b93d99101, type: 3}
       propertyPath: planningContainer
       value: 
