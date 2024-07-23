@@ -3909,18 +3909,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5870269170634564829, guid: 72cd86f76bdcd304c8a90eeacc5acb9a, type: 3}
-      propertyPath: m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870269170634564829, guid: 72cd86f76bdcd304c8a90eeacc5acb9a, type: 3}
-      propertyPath: m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5870269170634564829, guid: 72cd86f76bdcd304c8a90eeacc5acb9a, type: 3}
-      propertyPath: m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7401369148141998350, guid: 72cd86f76bdcd304c8a90eeacc5acb9a, type: 3}
       propertyPath: m_Name
       value: Kitchen
