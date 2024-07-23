@@ -39,6 +39,7 @@ namespace Core
 
         private CharacterData _characterData;
         private int _currentState = 0;
+        private bool _canUpdateArrowMove = false;
 
         public static GameManager Instance { get; private set; }
 
@@ -56,12 +57,10 @@ namespace Core
 
         private void Start()
         {
-            UpdateArrowMoveRegardingPosition();
             _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
             SetCharacterState(CharacterName.Camden, _currentState);
-            SetMoveDisabled(true);
 
             // StartCoroutine(Introduction());
         }
@@ -174,6 +173,8 @@ namespace Core
 
         public void UpdateArrowMoveRegardingPosition()
         {
+            if (!_canUpdateArrowMove) return;
+
             var arrowsMove = FindObjectsByType<ArrowMove>(FindObjectsInactive.Include, FindObjectsSortMode.None);
             foreach (var arrowMove in arrowsMove)
             {
@@ -219,15 +220,6 @@ namespace Core
             return !DialogManager.Instance.IsDialogActive && !JournalManager.Instance.IsJournalActive;
         }
 
-        public void SetMoveDisabled(bool isDisabled)
-        {
-            var arrowsMove = FindObjectsByType<ArrowMove>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-            foreach (var arrowMove in arrowsMove)
-            {
-                arrowMove.gameObject.SetActive(!isDisabled);
-            }
-        }
-
         public void ProcessTriggerAction(TriggerActionName triggerAction)
         {
             switch (triggerAction)
@@ -256,7 +248,8 @@ namespace Core
 
                     break;
                 case TriggerActionName.Enable_Movements:
-                    SetMoveDisabled(false);
+                    _canUpdateArrowMove = true;
+                    UpdateArrowMoveRegardingPosition();
                     break;
                 case TriggerActionName.Add_Foot_Print_To_Clues:
                     JournalManager.Instance.AddObjectClue("- The floor is still a bit dirty despite the heavy clean.");
@@ -268,7 +261,7 @@ namespace Core
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     JournalManager.Instance.AddObjectClue("- Only two people ate here for lunch.");
                     break;
-                
+
                 // Livia Dialogs
                 case TriggerActionName.Add_Livia_Morning:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Breakfast);
