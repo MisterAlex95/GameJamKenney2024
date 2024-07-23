@@ -2727,7 +2727,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Hello Camden Team,\n\nAs discussed by phone we need your services in order
     to help us tackle a \npretty urgent case.\nWe don\u2019t have sufficient staff
-    currently because of a major event that need a\nhuge security. To summarize your
+    currently because of a major event that\nneed a huge security. To summarize your
     mission:\n - A murder occurred today at 18 Luta Street at the Pumins.\n - Daniel
     Pumin, Ian Pumin and Livia Sumner are suspects in this case.\n - The doctor\u2019s
     report is on site.\n\nPlease go there as soon as possible and we will join you
@@ -2758,8 +2758,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 19
+  m_fontSizeBase: 19
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 10
