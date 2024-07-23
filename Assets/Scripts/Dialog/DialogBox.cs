@@ -16,7 +16,6 @@ namespace Dialog
         public TMP_Text speakerName;
         private IDialog _dialog;
 
-
         public void StartDialog(IDialog dialog)
         {
             _dialog = dialog;

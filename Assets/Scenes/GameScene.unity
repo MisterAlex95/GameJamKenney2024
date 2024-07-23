@@ -2377,11 +2377,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 42636077731959585, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 27.581596
       objectReference: {fileID: 0}
     - target: {fileID: 42636077731959585, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 21.013397
       objectReference: {fileID: 0}
     - target: {fileID: 42636077731959585, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2401,11 +2401,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 861045028752079570, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 27.583504
       objectReference: {fileID: 0}
     - target: {fileID: 861045028752079570, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 122.79789
       objectReference: {fileID: 0}
     - target: {fileID: 861045028752079570, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2433,11 +2433,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4967493992526099794, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 27.581596
       objectReference: {fileID: 0}
     - target: {fileID: 4967493992526099794, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -80.7711
       objectReference: {fileID: 0}
     - target: {fileID: 4967493992526099794, guid: efc20bea9f8067944aea6e1906985832, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3498,6 +3498,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Modal
       objectReference: {fileID: 0}
+    - target: {fileID: 5869406358808361743, guid: 0359645b81b140d4cb1dda564bfc3d98, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7981974491342461869, guid: 0359645b81b140d4cb1dda564bfc3d98, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3794,6 +3798,14 @@ PrefabInstance:
     - target: {fileID: 5514198180978930074, guid: 8a8c8d4c861eb7d4485d3c351026cdd6, type: 3}
       propertyPath: m_Name
       value: Hall
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791127559846156799, guid: 8a8c8d4c861eb7d4485d3c351026cdd6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791127559846156799, guid: 8a8c8d4c861eb7d4485d3c351026cdd6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.258
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
