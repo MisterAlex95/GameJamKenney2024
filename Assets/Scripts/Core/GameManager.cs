@@ -56,12 +56,12 @@ namespace Core
 
         private void Start()
         {
-            SetMoveDisabled(true);
+            UpdateArrowMoveRegardingPosition();
             _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
             SetCharacterState(CharacterName.Camden, _currentState);
-            UpdateArrowMoveRegardingPosition();
+            SetMoveDisabled(true);
 
             // StartCoroutine(Introduction());
         }

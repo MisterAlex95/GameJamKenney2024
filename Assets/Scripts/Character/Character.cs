@@ -1,4 +1,5 @@
 ﻿using System;
+using Camera;
 using Core;
 using Dialog;
 using UnityEngine;
@@ -7,6 +8,7 @@ namespace Character
 {
     public class Character : MonoBehaviour
     {
+        public CameraPositionName cameraPositionName;
         public GameObject characterEmote;
         public CharacterData characterData;
         private bool _alreadyTriggered = false;
@@ -45,6 +47,8 @@ namespace Character
 
         private IDialog GetCurrentDialog()
         {
+            if (CameraManager.Instance.GetCameraPosition() != cameraPositionName) return null;
+
             foreach (var dialog in characterData.dialogs)
             {
                 if (dialog.enableDialogAtStage != GetCurrentState()) continue;
