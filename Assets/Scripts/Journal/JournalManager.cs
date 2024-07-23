@@ -38,6 +38,8 @@ namespace Journal
         private bool _hasCheckTheLetter = false;
         private readonly List<JournalActivityName> _unlockedActivities = new();
 
+        private readonly List<string> _cluesAlreadyUnlocked = new();
+
         private readonly Dictionary<CharacterName, List<JournalActivityName>> _journalActivities =
             new()
             {
@@ -124,6 +126,13 @@ namespace Journal
             cluesContainer.SetActive(false);
             mainContainer.SetActive(false);
             _hasCheckTheLetter = true;
+
+            // First lecture we unlocked a first clue
+            if (_hasCheckTheLetter)
+            {
+                AddObjectClue(
+                    "- Maddy Thomas was killed between 8am and 1pm.");
+            }
         }
 
         private void ToggleTicket()
@@ -151,9 +160,9 @@ namespace Journal
             {
                 journalContainer.SetActive(false);
 
+                // First time it opens the letter and close the journal
                 if (_hasCheckTheLetter)
                 {
-                    // First time it opens the letter
                     GameManager.Instance.ProcessTriggerAction(TriggerActionName.Enable_Foot_Print);
                 }
             }
@@ -209,6 +218,9 @@ namespace Journal
 
         public void AddDialogClue(string clue)
         {
+            if (_cluesAlreadyUnlocked.Contains(clue)) return;
+            _cluesAlreadyUnlocked.Add(clue);
+
             var dialogClue = Instantiate(clueTextPrefab,
                 dialogCluesContainer.transform);
             dialogClue.GetComponentInChildren<TMP_Text>().text = clue;
@@ -216,6 +228,9 @@ namespace Journal
 
         public void AddObjectClue(string clue)
         {
+            if (_cluesAlreadyUnlocked.Contains(clue)) return;
+            _cluesAlreadyUnlocked.Add(clue);
+
             var dialogClue = Instantiate(clueTextPrefab,
                 objectCluesContainer.transform);
             dialogClue.GetComponentInChildren<TMP_Text>().text = clue;

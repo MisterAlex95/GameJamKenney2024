@@ -268,6 +268,8 @@ namespace Core
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     JournalManager.Instance.AddObjectClue("- Only two people ate here for lunch.");
                     break;
+                
+                // Livia Dialogs
                 case TriggerActionName.Add_Livia_Morning:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Breakfast);
                     JournalManager.Instance.AddDialogClue(
@@ -281,6 +283,8 @@ namespace Core
                     JournalManager.Instance.AddDialogClue(
                         "- Livia went to the 9.30am film show and came back right after it.");
                     break;
+
+                // Ian Dialogs
                 case TriggerActionName.Add_Ian_Morning:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Sleeping);
                     JournalManager.Instance.AddDialogClue(
@@ -292,6 +296,8 @@ namespace Core
                     JournalManager.Instance.AddDialogClue(
                         "- Ian cooked a lot of food and then ate lunch with Livia.");
                     break;
+
+                // Daniel Dialogs
                 case TriggerActionName.Add_Daniel_Lunch:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Restaurant);
                     JournalManager.Instance.AddDialogClue(
@@ -301,11 +307,10 @@ namespace Core
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cleaning);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cooking);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Reading);
-                    JournalManager.Instance.AddObjectClue(
-                        "- Maddy Thomas was killed between 8am and 1pm.");
                     JournalManager.Instance.AddDialogClue(
                         "- Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.");
                     break;
+
                 case TriggerActionName.Add_Poison_Clue:
                     JournalManager.Instance.AddObjectClue(
                         "- The killer was in a hurry.");
