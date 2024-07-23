@@ -17,7 +17,7 @@ namespace Letter
         public TMPro.TextMeshProUGUI textLetterComponent;
         public TMPro.TextMeshProUGUI endMessage;
 
-        public Button CursorButton;
+        public Button clickableZone;
         public GameObject newMailContainer;
         public GameObject mailContainer;
 
@@ -29,9 +29,9 @@ namespace Letter
             textLetterComponent.text = "";
             _transitionManager = TransitionManager.Instance();
 
-            CursorButton.onClick.AddListener(() =>
+            clickableZone.onClick.AddListener(() =>
             {
-                newMailContainer.SetActive(false);
+                Destroy(newMailContainer);
                 mailContainer.SetActive(true);
                 StartCoroutine(PrintText());
             });
