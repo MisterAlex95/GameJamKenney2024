@@ -122,3 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTriggerFromCameraPositions: 02000000
+  triggerActionName: 1
+  modalText: You successfully took an object. The letter is now available in your
+    inventory. Simply tap on your Notebook to open or close it or to access other 
+    clues you already found or objects.

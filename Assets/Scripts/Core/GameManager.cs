@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Camera;
 using Character;
+using Core.ClickableObject;
 using Dialog;
 using Journal;
 using Sound;
@@ -309,8 +310,6 @@ namespace Core
                         "- The killer was in a hurry.");
                     break;
                 case TriggerActionName.Add_Evidence:
-                    JournalManager.Instance.AddObjectClue(
-                        "- The killer was in a hurry.");
                     break;
                 case TriggerActionName.Add_Livia_Tickets:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Movies);
