@@ -98,6 +98,7 @@ namespace Journal
             cluesButton.onClick.AddListener(ToggleClues);
             letterButton.onClick.AddListener(ToggleLetter);
             ticketButton.onClick.AddListener(ToggleTicket);
+            UnlockActivity(JournalActivityName.None);
         }
 
         private void TogglePlanning()
@@ -198,15 +199,12 @@ namespace Journal
 
         public void UnlockActivity(JournalActivityName activity)
         {
-            if (!_unlockedActivities.Contains(activity))
-            {
-                _unlockedActivities.Add(activity);
-            }
-            else
+            if (_unlockedActivities.Contains(activity))
             {
                 return;
             }
 
+            _unlockedActivities.Add(activity);
             var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
 
             foreach (var characterActivity in allCharactersActivities)
