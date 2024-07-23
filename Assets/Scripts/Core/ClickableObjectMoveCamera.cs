@@ -18,8 +18,8 @@ namespace Core
         public void OnMouseDown()
         {
             if (!GameManager.Instance.CanInteract()) return;
-            if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance().GetCameraPosition())) return;
-            CameraManager.Instance().SetCameraPosition(cameraPositionName);
+            if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance.GetCameraPosition())) return;
+            CameraManager.Instance.SetCameraPosition(cameraPositionName);
         }
     }
 }

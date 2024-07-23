@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Camera;
 using Character;
 using Dialog;
 using Journal;
@@ -60,8 +61,9 @@ namespace Core
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
             SetCharacterState(CharacterName.Camden, _currentState);
+            UpdateArrowMoveRegardingPosition();
 
-            StartCoroutine(Introduction());
+            // StartCoroutine(Introduction());
         }
 
         #region Transitions
@@ -164,6 +166,23 @@ namespace Core
         public bool IsPrintingFinished()
         {
             return _isPrintingFinished;
+        }
+
+        #endregion
+
+        #region Teleport
+
+        public void UpdateArrowMoveRegardingPosition()
+        {
+            var arrowsMove = FindObjectsByType<ArrowMove>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            foreach (var arrowMove in arrowsMove)
+            {
+                arrowMove.gameObject.SetActive(arrowMove.GetComponent<ClickableObjectMoveCamera>()
+                    .canBeTriggerFromCameraPositions
+                    .Contains(CameraManager.Instance.GetCameraPosition()));
+
+                arrowMove.GetComponent<ClickableObjectMoveCamera>();
+            }
         }
 
         #endregion

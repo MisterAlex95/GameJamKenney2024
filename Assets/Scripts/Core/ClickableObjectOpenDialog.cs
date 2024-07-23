@@ -22,7 +22,7 @@ namespace Core
         public void OnMouseDown()
         {
             if (!GameManager.Instance.CanInteract()) return;
-            if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance().GetCameraPosition())) return;
+            if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance.GetCameraPosition())) return;
 
             if (!dialogData.looping && _alreadyTriggered) return;
             if (dialogData.enableDialogAtStage > GameManager.Instance.GetCharacterState(CharacterName.Camden)) return;

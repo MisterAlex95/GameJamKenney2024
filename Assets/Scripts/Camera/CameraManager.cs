@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 
 namespace Camera
 {
@@ -8,23 +9,13 @@ namespace Camera
         public CameraPositionName currentRoom;
         public CameraPositionName defaultRoom = CameraPositionName.Hall;
 
-        private static CameraManager _instance;
-
-        public static CameraManager Instance()
-        {
-            return _instance;
-        }
-
-        public CameraPositionName GetCameraPosition()
-        {
-            return currentRoom;
-        }
+        public static CameraManager Instance { get; private set; }
 
         private void Awake()
         {
-            if (_instance == null)
+            if (Instance == null)
             {
-                _instance = this;
+                Instance = this;
             }
             else
             {
@@ -36,6 +27,11 @@ namespace Camera
         private void Start()
         {
             SetCameraPosition(defaultRoom);
+        }
+
+        public CameraPositionName GetCameraPosition()
+        {
+            return currentRoom;
         }
 
         public void SetCameraPosition(CameraPositionName roomName)
@@ -51,6 +47,7 @@ namespace Camera
                 }
 
                 currentRoom = roomName;
+                GameManager.Instance.UpdateArrowMoveRegardingPosition();
                 return;
             }
 

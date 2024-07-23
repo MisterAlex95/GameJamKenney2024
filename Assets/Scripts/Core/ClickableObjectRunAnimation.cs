@@ -20,7 +20,7 @@ namespace Core
         {
             if (triggerName == null) return;
             if (!GameManager.Instance.CanInteract()) return;
-            if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance().GetCameraPosition())) return;
+            if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance.GetCameraPosition())) return;
             state = !state;
             GetComponent<Animator>().SetBool(triggerName, state);
         }

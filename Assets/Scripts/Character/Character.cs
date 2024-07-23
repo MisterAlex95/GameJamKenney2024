@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System;
+using Core;
 using Dialog;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace Character
 {
     public class Character : MonoBehaviour
     {
+        public GameObject characterEmote;
         public CharacterData characterData;
         private bool _alreadyTriggered = false;
         private int _currentState = 0;
@@ -13,6 +15,7 @@ namespace Character
         private void Start()
         {
             GameManager.Instance.SetCharacterState(characterData.characterName, _currentState);
+            characterEmote.SetActive(false);
         }
 
         private int GetCurrentState()
@@ -53,6 +56,22 @@ namespace Character
             }
 
             return null;
+        }
+
+        private bool HaveDialog()
+        {
+            foreach (var dialog in characterData.dialogs)
+            {
+                if (dialog.enableDialogAtStage == GetCurrentState() && !dialog.looping && !_alreadyTriggered)
+                    return true;
+            }
+
+            return false;
+        }
+
+        private void Update()
+        {
+            characterEmote.SetActive(HaveDialog());
         }
     }
 }
