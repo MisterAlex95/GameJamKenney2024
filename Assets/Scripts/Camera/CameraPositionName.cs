@@ -12,6 +12,7 @@
         Stairs,
         Dryer,
         Sink,
-        Bag
+        Bag,
+        Lunch
     }
 }
