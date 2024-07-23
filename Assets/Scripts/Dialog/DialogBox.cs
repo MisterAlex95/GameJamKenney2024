@@ -1,4 +1,5 @@
-﻿using Core;
+﻿using System.Collections;
+using Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -14,7 +15,9 @@ namespace Dialog
         public TMP_Text dialogText;
         public Image speakerImage;
         public TMP_Text speakerName;
+
         private IDialog _dialog;
+        private bool _canReadNextDialog = true;
 
         public void StartDialog(IDialog dialog)
         {
@@ -55,13 +58,23 @@ namespace Dialog
                     GameManager.Instance.ProcessTriggerAction(_dialog.GetTriggerActionName());
                 }
 
+                _canReadNextDialog = true;
                 DialogManager.Instance.EndDialog();
             }
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (!_canReadNextDialog) return;
+            StartCoroutine(EnableNextDialog());
             ProcessDialog();
+        }
+
+        private IEnumerator EnableNextDialog()
+        {
+            _canReadNextDialog = false;
+            yield return new WaitForSeconds(0.5f);
+            _canReadNextDialog = true;
         }
     }
 }
