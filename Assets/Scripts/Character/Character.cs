@@ -1,5 +1,4 @@
-﻿using System;
-using Camera;
+﻿using Camera;
 using Core;
 using Dialog;
 using UnityEngine;
