@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blackScreen: {fileID: 0}
   letterScreen: {fileID: 0}
+  endGameScreen: {fileID: 0}
   modalScreen: {fileID: 0}
   letterToSpawn: {fileID: 368332048315417770, guid: 7520f2818ba486c4fa2312ec734d6fc9, type: 3}
   positionToSpawnLetter: {fileID: 0}
+  positionDanielReturned: {fileID: 1079681135265023240, guid: 8b646526250d8674eac3a339c8171951, type: 3}
+  characterData: {fileID: 11400000, guid: 35ad93948ad1bf44d8049debbd72b140, type: 2}
