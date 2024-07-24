@@ -288,8 +288,8 @@ namespace Core
                         "- Ian slept until he was disturbed by noises coming from the ground floor.");
                     break;
                 case TriggerActionName.Add_Ian_Cooking:
-                    JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     SetCharacterState(CharacterName.Daniel, 3);
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     JournalManager.Instance.AddDialogClue(
                         "- Ian cooked a lot of food and then ate lunch with Livia.");
                     break;

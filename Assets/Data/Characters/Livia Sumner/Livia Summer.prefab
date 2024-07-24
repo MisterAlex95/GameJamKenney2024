@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89acbf3d85e44df0ba41ac94b97ec0f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraPositionName: 6
   characterEmote: {fileID: 3976478760086766111}
   characterData: {fileID: 11400000, guid: 9311de5aabc38d24a8fcc02058b1e0e3, type: 2}
 --- !u!1 &5669992743107036167

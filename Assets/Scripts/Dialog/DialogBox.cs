@@ -17,12 +17,13 @@ namespace Dialog
         public TMP_Text speakerName;
 
         private IDialog _dialog;
-        private bool _canReadNextDialog = true;
+        private bool _canReadNextDialog = false;
 
         public void StartDialog(IDialog dialog)
         {
             _dialog = dialog;
             ProcessDialog();
+            StartCoroutine(EnableNextDialog());
         }
 
         private void ProcessDialog()

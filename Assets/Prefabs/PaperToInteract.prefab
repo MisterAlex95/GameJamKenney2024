@@ -29,9 +29,9 @@ Transform:
   m_GameObject: {fileID: 368332048315417770}
   serializedVersion: 2
   m_LocalRotation: {x: 0.57589895, y: 0.31511417, z: -0.658076, w: 0.36875394}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.00283, y: 0.00434, z: -0.00096}
   m_LocalScale: {x: 0.00071428146, y: 0.0007142845, z: 0.0007142809}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 57.084, y: -75.279, z: -166.984}
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTriggerFromCameraPositions: 02000000
+  characterState: 0
   triggerActionName: 1
   modalText: You successfully took an object. The letter is now available in your
     inventory. Simply tap on your Notebook to open or close it or to access other 
