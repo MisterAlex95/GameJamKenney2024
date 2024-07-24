@@ -10,9 +10,9 @@ namespace Core.ClickableObject
         public new void OnMouseDown()
         {
             base.OnMouseDown();
-            if (baseReturned || triggerName == null)
+            if (BaseReturned || triggerName == null)
             {
-                baseReturned = true;
+                BaseReturned = true;
                 return;
             }
 

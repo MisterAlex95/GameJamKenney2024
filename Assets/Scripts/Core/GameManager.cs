@@ -38,7 +38,9 @@ namespace Core
         private bool _isPrintingFinished;
         private string _textLetter;
 
-        private CharacterData _characterData;
+
+        public Transform positionDanielReturned;
+        public CharacterData characterData;
         private int _currentState = 0;
         private bool _canUpdateArrowMove = false;
 
@@ -61,7 +63,7 @@ namespace Core
             _modalText = modalScreen.GetComponentInChildren<TMP_Text>();
             _blackScreenImage = blackScreen.GetComponent<Image>();
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
-            SetCharacterState(CharacterName.Camden, _currentState);
+            SetCharacterState(characterData.characterName, _currentState);
 
             // StartCoroutine(Introduction());
         }
@@ -265,6 +267,7 @@ namespace Core
 
                 // Livia Dialogs
                 case TriggerActionName.Add_Livia_Morning:
+                    SetCharacterState(characterData.characterName, 2);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Breakfast);
                     JournalManager.Instance.AddDialogClue(
                         "- Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.");
@@ -319,14 +322,13 @@ namespace Core
                     JournalManager.Instance.AddObjectClue(
                         "- Livia went to the movies between 9.15am and 11.40am.");
                     break;
-
                 case TriggerActionName.Planning_Correct:
                     var daniel = GameObject.Find("Daniel Pumin");
-                    daniel.transform.rotation = Quaternion.Euler(0, 180, 0);
+                    daniel.transform.position = positionDanielReturned.position;
+                    daniel.transform.rotation = positionDanielReturned.rotation;
                     break;
-
                 case TriggerActionName.End_Game:
-                    EndGame();
+                    StartCoroutine(EndGame());
                     break;
 
                 default:
@@ -338,9 +340,9 @@ namespace Core
 
         #region Character State
 
-        private int GetCurrentState()
+        public int GetCurrentState()
         {
-            var newState = GameManager.Instance.GetCharacterState(_characterData.characterName);
+            var newState = GetCharacterState(characterData.characterName);
             if (newState == _currentState) return _currentState;
 
             _currentState = newState;

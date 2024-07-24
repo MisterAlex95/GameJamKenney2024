@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BagDialog
   m_EditorClassIdentifier: 
   looping: 1
-  enableDialogAtStage: 0
+  enableDialogAtStage: 1
   increaseStageOnDialogEnd: 1
   characterToIncreaseStage: 2
   triggerActionName: 17

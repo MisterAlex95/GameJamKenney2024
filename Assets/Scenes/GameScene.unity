@@ -1377,6 +1377,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1690336868}
     - target: {fileID: 947725449321298013, guid: 8d87b36c1ba10144986d136db31f6666, type: 3}
+      propertyPath: characterData
+      value: 
+      objectReference: {fileID: 11400000, guid: 35ad93948ad1bf44d8049debbd72b140, type: 2}
+    - target: {fileID: 947725449321298013, guid: 8d87b36c1ba10144986d136db31f6666, type: 3}
       propertyPath: endGameScreen
       value: 
       objectReference: {fileID: 1239605862}
@@ -1384,6 +1388,10 @@ PrefabInstance:
       propertyPath: positionToSpawnLetter
       value: 
       objectReference: {fileID: 3317775322949551643}
+    - target: {fileID: 947725449321298013, guid: 8d87b36c1ba10144986d136db31f6666, type: 3}
+      propertyPath: positionDanielReturned
+      value: 
+      objectReference: {fileID: 1079681135265023240, guid: 8b646526250d8674eac3a339c8171951, type: 3}
     - target: {fileID: 1843631159031308009, guid: 8d87b36c1ba10144986d136db31f6666, type: 3}
       propertyPath: m_Name
       value: GameManager

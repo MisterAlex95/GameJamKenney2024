@@ -9,11 +9,11 @@ namespace Core.ClickableObject
         public new void OnMouseDown()
         {
             base.OnMouseDown();
-            if (baseReturned) return;
+            if (BaseReturned) return;
 
             if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance.GetCameraPosition()))
             {
-                baseReturned = true;
+                BaseReturned = true;
                 return;
             }
 

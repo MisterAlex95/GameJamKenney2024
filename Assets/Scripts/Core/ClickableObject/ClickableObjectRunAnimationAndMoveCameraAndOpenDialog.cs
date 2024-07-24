@@ -17,7 +17,7 @@ namespace Core.ClickableObject
         public new void OnMouseDown()
         {
             base.OnMouseDown();
-            if (baseReturned) return;
+            if (BaseReturned) return;
             CameraManager.Instance.SetCameraPosition(cameraPositionName);
             if (triggerName == null) return;
             state = !state;

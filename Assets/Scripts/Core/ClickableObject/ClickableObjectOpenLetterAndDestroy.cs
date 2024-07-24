@@ -8,7 +8,7 @@
         public new void OnMouseDown()
         {
             base.OnMouseDown();
-            if (baseReturned) return;
+            if (BaseReturned) return;
 
             GameManager.Instance.OpenModal(
                 modalText,

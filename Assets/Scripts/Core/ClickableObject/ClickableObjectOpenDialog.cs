@@ -13,16 +13,16 @@ namespace Core.ClickableObject
         public new void OnMouseDown()
         {
             base.OnMouseDown();
-            if (baseReturned) return;
+            if (BaseReturned) return;
             if (!dialogData.looping && _alreadyTriggered)
             {
-                baseReturned = true;
+                BaseReturned = true;
                 return;
             }
 
             if (dialogData.enableDialogAtStage > GameManager.Instance.GetCharacterState(CharacterName.Camden))
             {
-                baseReturned = true;
+                BaseReturned = true;
                 return;
             }
 

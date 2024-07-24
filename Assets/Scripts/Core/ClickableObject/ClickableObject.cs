@@ -8,7 +8,8 @@ namespace Core.ClickableObject
     public class ClickableObject : MonoBehaviour
     {
         public List<CameraPositionName> canBeTriggerFromCameraPositions;
-        protected bool baseReturned = false;
+        public int characterState = 0;
+        protected bool BaseReturned = false;
 
         private void Start()
         {
@@ -19,17 +20,23 @@ namespace Core.ClickableObject
         {
             if (!GameManager.Instance.CanInteract())
             {
-                baseReturned = true;
+                BaseReturned = true;
+                return;
+            }
+
+            if (GameManager.Instance.GetCurrentState() < characterState)
+            {
+                BaseReturned = true;
                 return;
             }
 
             if (!canBeTriggerFromCameraPositions.Contains(CameraManager.Instance.GetCameraPosition()))
             {
-                baseReturned = true;
+                BaseReturned = true;
                 return;
             }
 
-            baseReturned = false;
+            BaseReturned = false;
         }
     }
 }

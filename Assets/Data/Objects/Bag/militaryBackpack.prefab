@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTriggerFromCameraPositions: 0a000000
+  characterState: 0
   triggerActionName: 17
   dialogData: {fileID: 11400000, guid: 572375a287c42f64fb29829953fa1d52, type: 2}
 --- !u!1 &5118343899601634151
@@ -85,7 +86,7 @@ GameObject:
   - component: {fileID: 6957073182330661001}
   - component: {fileID: 5456485121111137845}
   m_Layer: 0
-  m_Name: militaryBackpack (1)
+  m_Name: militaryBackpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -197,6 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeTriggerFromCameraPositions: 06000000
+  characterState: 2
   cameraPositionName: 10
 --- !u!1001 &668911502612218275
 PrefabInstance:
