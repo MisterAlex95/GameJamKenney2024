@@ -11,7 +11,6 @@ namespace Character
         public CameraPositionName cameraPositionName;
         public GameObject characterEmote;
         public CharacterData characterData;
-        private bool _alreadyTriggered = false;
         private int _currentState = 0;
         private readonly List<int> _lastReadDialogIndex = new();
 
@@ -26,7 +25,6 @@ namespace Character
             var newState = GameManager.Instance.GetCharacterState(characterData.characterName);
             if (newState == _currentState) return _currentState;
 
-            _alreadyTriggered = false;
             _currentState = newState;
             return _currentState;
         }
@@ -42,8 +40,8 @@ namespace Character
 
             var dialog = GetCurrentDialog();
             if (dialog == null) return;
-            _alreadyTriggered = true;
-            Dialog.DialogManager.Instance.StartDialog(dialog);
+
+            DialogManager.Instance.StartDialog(dialog);
         }
 
         private IDialog GetCurrentDialog()
@@ -55,8 +53,6 @@ namespace Character
             {
                 index++;
                 if (dialog.enableDialogAtStage > GetCurrentState()) continue;
-                if (!dialog.looping && _alreadyTriggered)
-                    continue;
 
                 if (_lastReadDialogIndex.Contains(index) && !dialog.looping)
                     continue;
@@ -81,7 +77,7 @@ namespace Character
             {
                 index++;
                 if (dialog.enableDialogAtStage <= GetCurrentState() &&
-                    !dialog.looping && !_alreadyTriggered
+                    !dialog.looping
                     && !_lastReadDialogIndex.Contains((index)))
                     return true;
             }

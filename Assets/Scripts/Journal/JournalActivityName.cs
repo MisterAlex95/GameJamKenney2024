@@ -1,4 +1,6 @@
-﻿namespace Journal
+﻿using System;
+
+namespace Journal
 {
     public enum JournalActivityName
     {
@@ -32,6 +34,11 @@
                 JournalActivityName.Cinema => "Cinema",
                 _ => "Unknown"
             };
+        }
+
+        public static TOutput FromFriendlyString<TOutput>(string optionText)
+        {
+            return (TOutput) Enum.Parse(typeof(JournalActivityName), optionText);
         }
     }
 }

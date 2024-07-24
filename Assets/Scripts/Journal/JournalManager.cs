@@ -40,40 +40,40 @@ namespace Journal
 
         private readonly List<string> _cluesAlreadyUnlocked = new();
 
-        private readonly Dictionary<CharacterName, List<JournalActivityName>> _journalActivities =
+        private readonly Dictionary<CharacterName, Dictionary<int, JournalActivityName>> _journalActivities =
             new()
             {
                 {
                     CharacterName.Daniel,
-                    new List<JournalActivityName>
+                    new Dictionary<int, JournalActivityName>
                     {
-                        JournalActivityName.Breakfast,
-                        JournalActivityName.Cleaning,
-                        JournalActivityName.Reading,
-                        JournalActivityName.Reading,
-                        JournalActivityName.Restaurant,
+                        {9, JournalActivityName.Breakfast},
+                        {10, JournalActivityName.Cleaning},
+                        {11, JournalActivityName.Reading},
+                        {12, JournalActivityName.Reading},
+                        {13, JournalActivityName.Restaurant}
                     }
                 },
                 {
                     CharacterName.Ian,
-                    new List<JournalActivityName>
+                    new Dictionary<int, JournalActivityName>
                     {
-                        JournalActivityName.Sleeping,
-                        JournalActivityName.Sleeping,
-                        JournalActivityName.Cooking,
-                        JournalActivityName.Cooking,
-                        JournalActivityName.Lunch,
+                        {9, JournalActivityName.Sleeping},
+                        {10, JournalActivityName.Sleeping},
+                        {11, JournalActivityName.Cooking},
+                        {12, JournalActivityName.Cooking},
+                        {13, JournalActivityName.Lunch}
                     }
                 },
                 {
                     CharacterName.Livia,
-                    new List<JournalActivityName>
+                    new Dictionary<int, JournalActivityName>
                     {
-                        JournalActivityName.Breakfast,
-                        JournalActivityName.Cinema,
-                        JournalActivityName.Cinema,
-                        JournalActivityName.Cinema,
-                        JournalActivityName.Lunch,
+                        {9, JournalActivityName.Breakfast},
+                        {10, JournalActivityName.Cinema},
+                        {11, JournalActivityName.Cinema},
+                        {12, JournalActivityName.Cinema},
+                        {13, JournalActivityName.Lunch}
                     }
                 }
             };
@@ -247,27 +247,47 @@ namespace Journal
 
         public void CheckJournal()
         {
-            var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
-            var checkActivities = true;
+            var allCharacterActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
 
-            foreach (var characterActivity in allCharactersActivities)
+            foreach (var characterActivity in allCharacterActivities)
             {
-                var characterName = characterActivity.characterName;
-                var activityName = (JournalActivityName)characterActivity.GetDropdownValue();
-                var activityHour = characterActivity.activityHour;
-
-                if (_journalActivities.TryGetValue(characterName, out var activities))
+                if (!IsValidActivity(characterActivity))
                 {
-                    if (activities[activityHour] != activityName)
-                    {
-                        checkActivities = false;
-                    }
+                    return;
                 }
+            }
 
-                if (checkActivities)
-                {
-                    GameManager.Instance.ProcessTriggerAction(TriggerActionName.Planning_Correct);
-                }
+            GameManager.Instance.ProcessTriggerAction(TriggerActionName.Planning_Correct);
+        }
+
+        private bool IsValidActivity(JournalActivity characterActivity)
+        {
+            var characterName = characterActivity.characterName;
+            var activityName = (JournalActivityName) characterActivity.GetDropdownValue();
+            var activityHour = characterActivity.activityHour;
+
+            if (!_journalActivities.TryGetValue(characterName, out var activities))
+            {
+                return false;
+            }
+
+            if (!activities.TryGetValue(activityHour, out var expectedActivityName))
+            {
+                return false;
+            }
+
+            return expectedActivityName == activityName;
+        }
+
+        [ContextMenu("Print Journal")]
+        public void PrintJournal()
+        {
+            var allCharacterActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
+
+            foreach (var characterActivity in allCharacterActivities)
+            {
+                Debug.Log(
+                    $"{characterActivity.characterName} - {characterActivity.activityHour} - {characterActivity.GetDropdownValue()}");
             }
         }
     }
