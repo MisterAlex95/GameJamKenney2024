@@ -1,4 +1,5 @@
-﻿using Camera;
+﻿using System.Collections.Generic;
+using Camera;
 using Core;
 using Dialog;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace Character
         public CharacterData characterData;
         private bool _alreadyTriggered = false;
         private int _currentState = 0;
+        private readonly List<int> _lastReadDialogIndex = new();
 
         private void Start()
         {
@@ -48,10 +50,21 @@ namespace Character
         {
             if (CameraManager.Instance.GetCameraPosition() != cameraPositionName) return null;
 
+            var index = -1;
             foreach (var dialog in characterData.dialogs)
             {
-                if (dialog.enableDialogAtStage != GetCurrentState()) continue;
+                index++;
+                if (dialog.enableDialogAtStage > GetCurrentState()) continue;
                 if (!dialog.looping && _alreadyTriggered)
+                    continue;
+
+                if (_lastReadDialogIndex.Contains(index) && !dialog.looping)
+                    continue;
+
+                if (!_lastReadDialogIndex.Contains(index))
+                    _lastReadDialogIndex.Add(index);
+
+                if (_lastReadDialogIndex.Contains(index) && dialog.looping && index < GetCurrentState())
                     continue;
 
                 dialog.speakerName = characterData.characterName.GetString();
@@ -63,9 +76,13 @@ namespace Character
 
         private bool HaveDialog()
         {
+            var index = -1;
             foreach (var dialog in characterData.dialogs)
             {
-                if (dialog.enableDialogAtStage == GetCurrentState() && !dialog.looping && !_alreadyTriggered)
+                index++;
+                if (dialog.enableDialogAtStage <= GetCurrentState() &&
+                    !dialog.looping && !_alreadyTriggered
+                    && !_lastReadDialogIndex.Contains((index)))
                     return true;
             }
 

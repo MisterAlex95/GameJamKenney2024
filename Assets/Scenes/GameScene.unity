@@ -2520,6 +2520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BedRoom 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3625424647137691718, guid: 4ba4ef915939ac4418d84c529d9a4d8b, type: 3}
+      propertyPath: characterState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
