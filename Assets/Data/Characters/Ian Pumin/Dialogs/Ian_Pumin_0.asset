@@ -18,11 +18,12 @@ MonoBehaviour:
   characterToIncreaseStage: 3
   triggerActionName: 11
   speakerSprite: {fileID: 21300000, guid: dd30cd059032e9a4999609d561d2994c, type: 3}
-  speakerName: Ian Pumin
+  speakerName: Ian
   dialogText:
   - +Hello, we are Alex and Mary from Camden.
   - "Hello, I\u2019m Ian Pumin. How can I help you?"
   - "+We are investigating on Ms. Thomas sudden death by trying to recreate everyone\u2019s
-    schedule. What did you do this morning between 8am and 1pm? "
+    schedule."
+  - '+What did you do this morning between 8am and 1pm? '
   - I understand that you need to suspect me as well, but I mainly slept until I
     heard a big noise downstairs.

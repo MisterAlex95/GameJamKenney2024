@@ -108,6 +108,7 @@ namespace Journal
             cluesContainer.SetActive(false);
             letterContainer.SetActive(false);
             mainContainer.SetActive(false);
+            ticketContainer.SetActive(false);
         }
 
         private void ToggleClues()
@@ -117,6 +118,7 @@ namespace Journal
             planningContainer.SetActive(false);
             letterContainer.SetActive(false);
             mainContainer.SetActive(false);
+            ticketContainer.SetActive(false);
         }
 
         private void ToggleLetter()
@@ -126,6 +128,8 @@ namespace Journal
             planningContainer.SetActive(false);
             cluesContainer.SetActive(false);
             mainContainer.SetActive(false);
+            ticketContainer.SetActive(false);
+
             _hasCheckTheLetter = true;
 
             // First lecture we unlocked a first clue
@@ -172,11 +176,6 @@ namespace Journal
         public void MakeJournalButtonAppear()
         {
             journalButton.SetActive(true);
-        }
-
-        public void MakeTicketRestaurantAppear()
-        {
-            ticketRestaurant.SetActive(true);
         }
 
         public void MakeTicketParkingAppear()
