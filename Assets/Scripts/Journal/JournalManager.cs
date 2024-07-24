@@ -109,6 +109,7 @@ namespace Journal
             letterContainer.SetActive(false);
             mainContainer.SetActive(false);
             ticketContainer.SetActive(false);
+            UpdateActivities();
         }
 
         private void ToggleClues()
@@ -204,6 +205,17 @@ namespace Journal
             }
 
             _unlockedActivities.Add(activity);
+            var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
+
+            foreach (var characterActivity in allCharactersActivities)
+            {
+                var previousValue = characterActivity.GetDropdownValue();
+                characterActivity.UpdateDropdownOptions(_unlockedActivities, previousValue);
+            }
+        }
+
+        private void UpdateActivities()
+        {
             var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
 
             foreach (var characterActivity in allCharactersActivities)
