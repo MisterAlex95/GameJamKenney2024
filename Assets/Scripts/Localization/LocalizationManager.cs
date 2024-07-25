@@ -1,0 +1,65 @@
+﻿using System.Collections.Generic;
+using System.IO;
+using UnityEngine;
+
+namespace Localization
+{
+    public class LocalizationManager : MonoBehaviour
+    {
+        public static LocalizationManager Instance;
+
+        private Dictionary<int, string> _localizedText;
+        private LocalizationLanguage _currentLanguage = LocalizationLanguage.English;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                LoadLocalizedText(LocalizationLanguage.English.ToLanguageCode());
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private void LoadLocalizedText(string language)
+        {
+            _localizedText = new Dictionary<int, string>();
+            var fileName = $"localization_{language}.csv";
+            var filePath = Path.Combine(Application.streamingAssetsPath, fileName);
+
+            if (File.Exists(filePath))
+            {
+                var data = File.ReadAllLines(filePath);
+
+                for (var i = 1; i < data.Length; i++)
+                {
+                    var row = data[i].Split(',');
+                    var key = int.Parse(row[0]);
+                    var value = row[1];
+                    _localizedText[key] = value;
+                }
+
+                Debug.Log("Localization data loaded for language: " + language);
+            }
+            else
+            {
+                Debug.LogError("Cannot find file: " + filePath);
+            }
+        }
+
+        public string GetLocalizedValue(int key)
+        {
+            return _localizedText.TryGetValue(key, out var value) ? value : key.ToString();
+        }
+
+        public void SetLanguage(LocalizationLanguage language)
+        {
+            _currentLanguage = language;
+            LoadLocalizedText(language.ToLanguageCode());
+        }
+    }
+}
