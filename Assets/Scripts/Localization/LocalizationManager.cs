@@ -37,6 +37,9 @@ namespace Localization
 
                 for (var i = 1; i < data.Length; i++)
                 {
+                    // Escape comments
+                    if (data[i].StartsWith("//")) continue;
+
                     var row = data[i].Split(',');
                     var key = int.Parse(row[0]);
                     var value = row[1];

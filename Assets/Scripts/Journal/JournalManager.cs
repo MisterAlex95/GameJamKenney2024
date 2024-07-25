@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using Character;
 using Core;
 using Dialog;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,9 +16,12 @@ namespace Journal
 
         [Header("Journal Button")] public GameObject journalButton;
 
-        [Header("Planning")] public GameObject mainContainer;
+        [Header("Main Container")] public GameObject mainContainer;
 
         [Header("Planning")] public GameObject planningContainer;
+        public GameObject activityContainer;
+        public GameObject activityModal;
+        public GameObject activityModalButtonPrefab;
         public Button planningButton;
 
         [Header("Clues")] public GameObject cluesContainer;
@@ -37,43 +42,80 @@ namespace Journal
 
         private bool _hasCheckTheLetter = false;
         private readonly List<JournalActivityName> _unlockedActivities = new();
-
         private readonly List<string> _cluesAlreadyUnlocked = new();
 
-        private readonly Dictionary<CharacterName, Dictionary<int, JournalActivityName>> _journalActivities =
+        private readonly Dictionary<CharacterName, Dictionary<int, JournalActivityName>> _journalActivities = new()
+        {
+            {
+                CharacterName.Daniel,
+                new Dictionary<int, JournalActivityName>
+                {
+                    { 9, JournalActivityName.None },
+                    { 10, JournalActivityName.None },
+                    { 11, JournalActivityName.None },
+                    { 12, JournalActivityName.None },
+                    { 13, JournalActivityName.None }
+                }
+            },
+            {
+                CharacterName.Ian,
+                new Dictionary<int, JournalActivityName>
+                {
+                    { 9, JournalActivityName.None },
+                    { 10, JournalActivityName.None },
+                    { 11, JournalActivityName.None },
+                    { 12, JournalActivityName.None },
+                    { 13, JournalActivityName.None }
+                }
+            },
+            {
+                CharacterName.Livia,
+                new Dictionary<int, JournalActivityName>
+                {
+                    { 9, JournalActivityName.None },
+                    { 10, JournalActivityName.None },
+                    { 11, JournalActivityName.None },
+                    { 12, JournalActivityName.None },
+                    { 13, JournalActivityName.None }
+                }
+            }
+        };
+
+
+        private readonly Dictionary<CharacterName, Dictionary<int, JournalActivityName>> _journalActivitiesSoluce =
             new()
             {
                 {
                     CharacterName.Daniel,
                     new Dictionary<int, JournalActivityName>
                     {
-                        {9, JournalActivityName.Breakfast},
-                        {10, JournalActivityName.Cleaning},
-                        {11, JournalActivityName.Reading},
-                        {12, JournalActivityName.Reading},
-                        {13, JournalActivityName.Restaurant}
+                        { 9, JournalActivityName.Breakfast },
+                        { 10, JournalActivityName.Cleaning },
+                        { 11, JournalActivityName.Reading },
+                        { 12, JournalActivityName.Reading },
+                        { 13, JournalActivityName.Restaurant }
                     }
                 },
                 {
                     CharacterName.Ian,
                     new Dictionary<int, JournalActivityName>
                     {
-                        {9, JournalActivityName.Sleeping},
-                        {10, JournalActivityName.Sleeping},
-                        {11, JournalActivityName.Cooking},
-                        {12, JournalActivityName.Cooking},
-                        {13, JournalActivityName.Lunch}
+                        { 9, JournalActivityName.Sleeping },
+                        { 10, JournalActivityName.Sleeping },
+                        { 11, JournalActivityName.Cooking },
+                        { 12, JournalActivityName.Cooking },
+                        { 13, JournalActivityName.Lunch }
                     }
                 },
                 {
                     CharacterName.Livia,
                     new Dictionary<int, JournalActivityName>
                     {
-                        {9, JournalActivityName.Breakfast},
-                        {10, JournalActivityName.Cinema},
-                        {11, JournalActivityName.Cinema},
-                        {12, JournalActivityName.Cinema},
-                        {13, JournalActivityName.Lunch}
+                        { 9, JournalActivityName.Breakfast },
+                        { 10, JournalActivityName.Cinema },
+                        { 11, JournalActivityName.Cinema },
+                        { 12, JournalActivityName.Cinema },
+                        { 13, JournalActivityName.Lunch }
                     }
                 }
             };
@@ -99,6 +141,7 @@ namespace Journal
             letterButton.onClick.AddListener(ToggleLetter);
             ticketButton.onClick.AddListener(ToggleTicket);
             UnlockActivity(JournalActivityName.None);
+            RenameAllButtons();
         }
 
         private void TogglePlanning()
@@ -109,7 +152,6 @@ namespace Journal
             letterContainer.SetActive(false);
             mainContainer.SetActive(false);
             ticketContainer.SetActive(false);
-            UpdateActivities();
         }
 
         private void ToggleClues()
@@ -184,11 +226,15 @@ namespace Journal
             ticketParking.SetActive(true);
         }
 
+        public void MakeTicketRestaurantAppear()
+        {
+            ticketRestaurant.SetActive(true);
+        }
+
         public void MakeTicketCinemaAppear()
         {
             ticketCinema.SetActive(true);
         }
-
 
         public void MakeTicketButtonAppear()
         {
@@ -205,24 +251,11 @@ namespace Journal
             }
 
             _unlockedActivities.Add(activity);
-            var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
 
-            foreach (var characterActivity in allCharactersActivities)
-            {
-                var previousValue = characterActivity.GetDropdownValue();
-                characterActivity.UpdateDropdownOptions(_unlockedActivities, previousValue);
-            }
-        }
-
-        private void UpdateActivities()
-        {
-            var allCharactersActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
-
-            foreach (var characterActivity in allCharactersActivities)
-            {
-                var previousValue = characterActivity.GetDropdownValue();
-                characterActivity.UpdateDropdownOptions(_unlockedActivities, previousValue);
-            }
+            // Spawn the button in the activity modal
+            var activityButton = Instantiate(activityModalButtonPrefab, activityContainer.transform);
+            activityButton.GetComponent<ActivityModalButton>().SetActivity(activity);
+            activityButton.GetComponentInChildren<TMP_Text>().text = activity.ToFriendlyString();
         }
 
         public void AddDialogClue(string clue)
@@ -245,50 +278,75 @@ namespace Journal
             dialogClue.GetComponentInChildren<TMP_Text>().text = clue;
         }
 
-        public void CheckJournal()
+        private void CheckJournal()
         {
-            var allCharacterActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
-
-            foreach (var characterActivity in allCharacterActivities)
+            foreach (var solutionCharacter in _journalActivitiesSoluce.Keys)
             {
-                if (!IsValidActivity(characterActivity))
+                var solutionActivities = _journalActivitiesSoluce[solutionCharacter];
+                var playerActivities = _journalActivities[solutionCharacter];
+
+                for (var i = 9; i < (9 + solutionActivities.Count); i++)
                 {
-                    return;
+                    if (solutionActivities[i] != playerActivities[i])
+                    {
+                        return;
+                    }
                 }
             }
 
             GameManager.Instance.ProcessTriggerAction(TriggerActionName.Planning_Correct);
         }
 
-        private bool IsValidActivity(JournalActivity characterActivity)
+        public void ToggleActivityModal(CharacterName characterName, int activityHour)
         {
-            var characterName = characterActivity.characterName;
-            var activityName = (JournalActivityName) characterActivity.GetDropdownValue();
-            var activityHour = characterActivity.activityHour;
+            activityModal.SetActive(!activityModal.activeSelf);
 
-            if (!_journalActivities.TryGetValue(characterName, out var activities))
+            if (!activityModal.activeSelf) return;
+            foreach (var activityModalButton in GameObject.FindObjectsByType<ActivityModalButton>(
+                         FindObjectsInactive.Include,
+                         FindObjectsSortMode.None))
             {
-                return false;
+                activityModalButton.SetOnClick((activity) =>
+                {
+                    _journalActivities[characterName][activityHour] = activity;
+                    RenameButton(characterName, activityHour, activity.ToFriendlyString());
+                    activityModal.SetActive(false);
+                    StartCoroutine(DelayedCheckJournal());
+                });
             }
-
-            if (!activities.TryGetValue(activityHour, out var expectedActivityName))
-            {
-                return false;
-            }
-
-            return expectedActivityName == activityName;
         }
 
-        [ContextMenu("Print Journal")]
-        public void PrintJournal()
+        private void RenameButton(CharacterName characterName, int activityHour, string name)
         {
-            var allCharacterActivities = journalContainer.GetComponentsInChildren<JournalActivity>();
+            var buttons = GameObject.FindObjectsByType<JournalActivity>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
 
-            foreach (var characterActivity in allCharacterActivities)
+            foreach (var button in buttons)
             {
-                Debug.Log(
-                    $"{characterActivity.characterName} - {characterActivity.activityHour} - {characterActivity.GetDropdownValue()}");
+                if (button.characterName == characterName && button.activityHour == activityHour)
+                {
+                    button.GetComponentInChildren<TMP_Text>().text = name;
+                }
             }
+        }
+
+        private void RenameAllButtons()
+        {
+            var buttons = GameObject.FindObjectsByType<JournalActivity>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None);
+
+            foreach (var button in buttons)
+            {
+                button.GetComponentInChildren<TMP_Text>().text = JournalActivityName.None.ToFriendlyString();
+            }
+        }
+
+        private IEnumerator DelayedCheckJournal()
+        {
+            yield return new WaitForSeconds(1f);
+            CheckJournal();
         }
     }
 }

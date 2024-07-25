@@ -65,7 +65,7 @@ namespace Core
             _blackScreenText = blackScreen.GetComponentInChildren<TMP_Text>();
             SetCharacterState(characterData.characterName, _currentState);
 
-            // StartCoroutine(Introduction());
+            StartCoroutine(Introduction());
         }
 
         #region Transitions
@@ -136,7 +136,7 @@ namespace Core
             }
 
             endGameScreen.SetActive(true);
-            GetComponent<Button>().onClick.AddListener(() => SceneManager.LoadScene(0));
+            GetComponentInChildren<Button>().onClick.AddListener(() => SceneManager.LoadScene(0));
         }
 
         public void OpenLetter(Action action)
@@ -275,7 +275,7 @@ namespace Core
                         "- Livia discovered Maddy at 1pm when she went answering her ringing phone.");
                     break;
                 case TriggerActionName.Add_Livia_Cinema:
-                    JournalManager.Instance.UnlockActivity(JournalActivityName.Movies);
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Cinema);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
                     JournalManager.Instance.AddDialogClue(
                         "- Livia went to the 9.30am film show and came back right after it.");
@@ -296,6 +296,7 @@ namespace Core
 
                 // Daniel Dialogs
                 case TriggerActionName.Add_Daniel_Lunch:
+                    JournalManager.Instance.MakeTicketRestaurantAppear();
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Restaurant);
                     JournalManager.Instance.AddDialogClue(
                         "- Daniel ate a big lunch at the restaurant with his friend Norah.");
@@ -315,7 +316,7 @@ namespace Core
                 case TriggerActionName.Add_Evidence:
                     break;
                 case TriggerActionName.Add_Livia_Tickets:
-                    JournalManager.Instance.UnlockActivity(JournalActivityName.Movies);
+                    JournalManager.Instance.UnlockActivity(JournalActivityName.Cinema);
                     ProcessTriggerAction(TriggerActionName.Tickets_Appear);
                     JournalManager.Instance.MakeTicketParkingAppear();
                     JournalManager.Instance.MakeTicketCinemaAppear();

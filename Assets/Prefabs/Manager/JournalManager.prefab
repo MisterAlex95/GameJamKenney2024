@@ -48,11 +48,20 @@ MonoBehaviour:
   journalButton: {fileID: 0}
   mainContainer: {fileID: 0}
   planningContainer: {fileID: 0}
+  activityContainer: {fileID: 0}
+  activityModal: {fileID: 0}
+  activityModalButtonPrefab: {fileID: 235797403133413819, guid: 020068e18c35f7648857ff4c6806cd65, type: 3}
   planningButton: {fileID: 0}
   cluesContainer: {fileID: 0}
+  dialogCluesContainer: {fileID: 0}
+  objectCluesContainer: {fileID: 0}
   cluesButton: {fileID: 0}
+  clueTextPrefab: {fileID: 2456367899294026428, guid: b9ace2507b1311548b9190622500448e, type: 3}
   letterContainer: {fileID: 0}
   letterButton: {fileID: 0}
   ticketContainer: {fileID: 0}
   ticketButton: {fileID: 0}
   ticketButtonContainer: {fileID: 0}
+  ticketCinema: {fileID: 0}
+  ticketParking: {fileID: 0}
+  ticketRestaurant: {fileID: 0}

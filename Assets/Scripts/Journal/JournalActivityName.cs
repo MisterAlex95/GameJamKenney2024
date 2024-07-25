@@ -8,7 +8,6 @@ namespace Journal
         Breakfast,
         Sleeping,
         Cleaning,
-        Movies,
         Reading,
         Cooking,
         Lunch,
@@ -26,7 +25,6 @@ namespace Journal
                 JournalActivityName.Breakfast => "Breakfast",
                 JournalActivityName.Sleeping => "Sleeping",
                 JournalActivityName.Cleaning => "Cleaning",
-                JournalActivityName.Movies => "Movies",
                 JournalActivityName.Reading => "Reading",
                 JournalActivityName.Cooking => "Cooking",
                 JournalActivityName.Lunch => "Lunch",
@@ -38,7 +36,7 @@ namespace Journal
 
         public static TOutput FromFriendlyString<TOutput>(string optionText)
         {
-            return (TOutput) Enum.Parse(typeof(JournalActivityName), optionText);
+            return (TOutput)Enum.Parse(typeof(JournalActivityName), optionText);
         }
     }
 }
