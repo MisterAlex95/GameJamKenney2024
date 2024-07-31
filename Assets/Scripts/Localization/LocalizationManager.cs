@@ -42,7 +42,8 @@ namespace Localization
 
                     var row = data[i].Split(',');
                     var key = int.Parse(row[0]);
-                    var value = row[1];
+                    // join all the other elements in the row in case the value contains commas
+                    var value = string.Join(",", row, 1, row.Length - 1);
                     _localizedText[key] = value;
                 }
 
@@ -61,8 +62,20 @@ namespace Localization
 
         public void SetLanguage(LocalizationLanguage language)
         {
+            if (_currentLanguage == language) return;
             _currentLanguage = language;
             LoadLocalizedText(language.ToLanguageCode());
+
+            // Update all localized strings
+            var localizedStrings = Object.FindObjectsByType<LocalizedString>(
+                FindObjectsInactive.Include,
+                FindObjectsSortMode.None
+            );
+
+            foreach (var localizedString in localizedStrings)
+            {
+                localizedString.UpdateText();
+            }
         }
     }
 }

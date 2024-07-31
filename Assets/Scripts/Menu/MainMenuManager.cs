@@ -1,5 +1,6 @@
 using System;
 using EasyTransition;
+using Localization;
 using UnityEngine;
 
 namespace Menu
@@ -10,6 +11,7 @@ namespace Menu
         private TransitionManager _transitionManager;
 
         public GameObject creditPage;
+        public GameObject optionPage;
 
         private void Start()
         {
@@ -31,6 +33,21 @@ namespace Menu
         {
             creditPage.SetActive(false);
         }
+
+        public void OpenOptionPage()
+        {
+            optionPage.SetActive(true);
+        }
+
+        public void CloseOptionPage()
+        {
+            optionPage.SetActive(false);
+        }
+
+        public void SetLanguageFrench() => LocalizationManager.Instance.SetLanguage(LocalizationLanguage.French);
+        public void SetLanguageEnglish() => LocalizationManager.Instance.SetLanguage(LocalizationLanguage.English);
+        public void SetLanguageNellouche() => LocalizationManager.Instance.SetLanguage(LocalizationLanguage.Nellouche);
+        public void SetLanguageMarouche() => LocalizationManager.Instance.SetLanguage(LocalizationLanguage.Marouche);
 
         public void QuitGame()
         {

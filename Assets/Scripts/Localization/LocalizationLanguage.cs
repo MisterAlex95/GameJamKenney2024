@@ -3,7 +3,9 @@
     public enum LocalizationLanguage
     {
         English,
-        French
+        French,
+        Nellouche,
+        Marouche
     }
 
     public static class LocalizationLanguageExtensions
@@ -14,6 +16,8 @@
             {
                 LocalizationLanguage.English => "en",
                 LocalizationLanguage.French => "fr",
+                LocalizationLanguage.Nellouche => "nl",
+                LocalizationLanguage.Marouche => "mr",
                 _ => "en"
             };
         }
