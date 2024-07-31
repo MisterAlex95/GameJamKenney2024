@@ -24,9 +24,9 @@ namespace Letter
         private void Start()
         {
             endMessage.color = new Color(1, 1, 1, 0);
+            textLetterComponent.color = new Color(1, 1, 1, 0);
             _isPrintingFinished = false;
-            _text = textLetterComponent.text;
-            textLetterComponent.text = "";
+
             _transitionManager = TransitionManager.Instance();
 
             clickableZone.onClick.AddListener(() =>
@@ -40,6 +40,9 @@ namespace Letter
         private IEnumerator PrintText()
         {
             yield return new WaitForSeconds(1);
+            _text = textLetterComponent.text;
+            textLetterComponent.text = "";
+            textLetterComponent.color = Color.black;
             foreach (var t in _text)
             {
                 textLetterComponent.text += t;

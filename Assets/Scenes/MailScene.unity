@@ -1738,6 +1738,7 @@ GameObject:
   - component: {fileID: 1087749675}
   - component: {fileID: 1087749677}
   - component: {fileID: 1087749676}
+  - component: {fileID: 1087749678}
   m_Layer: 5
   m_Name: EndMessage
   m_TagString: Untagged
@@ -1863,6 +1864,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087749674}
   m_CullTransparentMesh: 1
+--- !u!114 &1087749678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087749674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b276606aab26457489579c55d1f39851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 13
 --- !u!1 &1244372676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,6 +2310,7 @@ GameObject:
   - component: {fileID: 1903447908}
   - component: {fileID: 1903447910}
   - component: {fileID: 1903447909}
+  - component: {fileID: 1903447911}
   m_Layer: 5
   m_Name: New Email
   m_TagString: Untagged
@@ -2421,6 +2436,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1903447907}
   m_CullTransparentMesh: 1
+--- !u!114 &1903447911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903447907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b276606aab26457489579c55d1f39851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 12
 --- !u!1 &1915978751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2679,6 +2707,7 @@ GameObject:
   - component: {fileID: 2116850814}
   - component: {fileID: 2116850816}
   - component: {fileID: 2116850815}
+  - component: {fileID: 2116850817}
   m_Layer: 5
   m_Name: LetterText
   m_TagString: Untagged
@@ -2725,13 +2754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hello Camden Team,\n\nAs discussed by phone we need your services in order
-    to help us tackle a \npretty urgent case.\nWe don\u2019t have sufficient staff
-    currently because of a major event that\nneed a huge security. To summarize your
-    mission:\n - A murder occurred today at 18 Luta Street at the Pumins.\n - Daniel
-    Pumin, Ian Pumin and Livia Sumner are suspects in this case.\n - The doctor\u2019s
-    report is on site.\n\nPlease go there as soon as possible and we will join you
-    once the event\nis over.\n\nBest Regards,\n\nOfficer Kenney, Bricktown Police"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2810,6 +2833,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116850813}
   m_CullTransparentMesh: 1
+--- !u!114 &2116850817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2116850813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15ca4ad0c6c54f6885a3be0d42401df2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texts:
+  - "Bricktown, 3rd of February 2014\n\nObject: Report on Maddy Thomas\u2019 corpse
+    analysis.\n\nI checked Ms. Thomas corpse today at 1.30pm in the guest room.\nIt
+    is clear that she has been poisoned between 8am and 1pm\nwith some jam containing
+    a mixture of non edible mushrooms\nand toxic liquid. The poison has been prepared
+    a few hours top\nbefore being given to the victim. \n\nIt killed Ms. Thomas in
+    less than 10 minutes.\n\nI am at your disposal if you need to contact me,\n\nDr.
+    Romy Arin"
+  - "Bricktown, le 3 f\xE9vrier 2014\n\nObjet: Rapport sur l'analyse du corps de
+    Maddy Thomas\n\nJ'ai check\xE9 le corps de Maddy Thomas aujourd'hui \xE0 13h30
+    dans\nla chambre d'ami.es. Il appara\xEEt clairement que la victime a \xE9t\xE9\nempoisonn\xE9e
+    entre 8h et 13h avec de la confiture contenant un m\xE9lange\nde champignon non
+    comestible et d'un liquide toxique.\nLe poison a \xE9t\xE9 pr\xE9par\xE9 au plus
+    tard quelques heures avant d'avoir \xE9t\xE9\ndonn\xE9 \xE0 Mme.Thomas. \n\nElle
+    est ensuite d\xE9c\xE9d\xE9e dans les 10 minutes suivant l'ingurgitation.\n\nJe
+    suis \xE0 votre disposition si vous avez besoin de moi,\n\nDr. Romy Arin"
+  - "Bricktown, le 3 f\xE9vrier 2014\n\nObjet: Rapport sur l'analyse du corps de
+    Maddy Thomas\n\nJ'ai check\xE9 le corps de Maddy Thomas aujourd'hui \xE0 13h30
+    dans\nla chambre d'ami.es. Il appara\xEEt clairement que la victime a \xE9t\xE9\nempoisonn\xE9e
+    entre 8h et 13h avec de la confiture contenant un m\xE9lange\nde champignon non
+    comestible et d'un liquide toxique.\nLe poison a \xE9t\xE9 pr\xE9par\xE9 au plus
+    tard quelques heures avant d'avoir \xE9t\xE9\ndonn\xE9 \xE0 Mme.Thomas. \n\nElle
+    est ensuite d\xE9c\xE9d\xE9e dans les 10 minutes suivant l'ingurgitation.\n\nJe
+    suis \xE0 votre disposition si vous avez besoin de moi,\n\nDr. Romy Arin"
+  - "Bricktown, le 3 f\xE9vrier 2014\n\nObjet: Rapport sur l'analyse du corps de
+    Maddy Thomas\n\nJ'ai check\xE9 le corps de Maddy Thomas aujourd'hui \xE0 13h30
+    dans\nla chambre d'ami.es. Il appara\xEEt clairement que la victime a \xE9t\xE9\nempoisonn\xE9e
+    entre 8h et 13h avec de la confiture contenant un m\xE9lange\nde champignon non
+    comestible et d'un liquide toxique.\nLe poison a \xE9t\xE9 pr\xE9par\xE9 au plus
+    tard quelques heures avant d'avoir \xE9t\xE9\ndonn\xE9 \xE0 Mme.Thomas. \n\nElle
+    est ensuite d\xE9c\xE9d\xE9e dans les 10 minutes suivant l'ingurgitation.\n\nJe
+    suis \xE0 votre disposition si vous avez besoin de moi,\n\nDr. Romy Arin"
 --- !u!23 &445822397734878984
 MeshRenderer:
   m_ObjectHideFlags: 0

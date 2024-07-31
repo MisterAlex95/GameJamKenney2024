@@ -77,5 +77,10 @@ namespace Localization
                 localizedString.UpdateText();
             }
         }
+
+        public LocalizationLanguage GetCurrentLanguage()
+        {
+            return _currentLanguage;
+        }
     }
 }
