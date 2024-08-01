@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2743543937801497499}
   - component: {fileID: 2014867818348449291}
   m_Layer: 5
-  m_Name: EndGameText
+  m_Name: BackScreenText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -141,22 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "After this whole investigation it appeared clearly that Daniel was the
-    killer. He took advantage of the alone time he had after Livia\u2019s departure
-    for the Movies to concoct the poison and give Maddy a sleeping pill so he was
-    sure that she won\u2019t wake up anytime soon. But he did a little too much noise
-    and it woke Ian up. He had to stay in the kitchen because he needed to let the
-    mixture still for an hour and make sure that Ian won\u2019t discover it. Daniel
-    managed to plan a last minute lunch with a friend that never came. He said that
-    he ate a lot but the receipt we found only contains a starter and the bill was
-    paid at 12.15pm. So he had enough time to come back and kill Maddy. Ian and Livia
-    didn\u2019t hear him because the living room door was closed and they were chatting.
-    Daniel gave her the potion saying he just cooked something and wanted her to
-    try it. He left in a hurry because he shouldn\u2019t be seen that early in the
-    house. That\u2019s when he didn\u2019t took enough time to clean behind him.
-    After that Daniel waited for Ian\u2019s call a few streets further and came back
-    like he never left the restaurant before.\nAfter explaining all that the Police
-    came and arrested Daniel Pumin for the murder of Maddy Thomas."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

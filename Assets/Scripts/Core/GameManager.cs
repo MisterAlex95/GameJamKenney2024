@@ -7,6 +7,7 @@ using Character;
 using Core.ClickableObject;
 using Dialog;
 using Journal;
+using Localization;
 using Sound;
 using TMPro;
 using UnityEngine;
@@ -73,7 +74,7 @@ namespace Core
         private IEnumerator Introduction()
         {
             _blackScreenText.color = new Color(1, 1, 1, 0);
-            _blackScreenText.text = "Later the same day...";
+            _blackScreenText.text = LocalizationManager.Instance.GetLocalizedValue(14);
 
             blackScreen.SetActive(true);
 
