@@ -22,3 +22,4 @@ MonoBehaviour:
   dialogText:
   - "Let me a bit of time please, it is a hard day, but don\u2019t hesitate to go
     around the house in the meantime."
+  dialogLocId: 41000000

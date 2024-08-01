@@ -2282,10 +2282,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlackScreen
       objectReference: {fileID: 0}
-    - target: {fileID: 2014867818348449291, guid: 860dbd675bf0ba744a9398b9d69c9d0d, type: 3}
-      propertyPath: m_text
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2651407250115457890, guid: 860dbd675bf0ba744a9398b9d69c9d0d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2365,10 +2361,6 @@ PrefabInstance:
     - target: {fileID: 2651407250115457890, guid: 860dbd675bf0ba744a9398b9d69c9d0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6835448609021933522, guid: 860dbd675bf0ba744a9398b9d69c9d0d, type: 3}
-      propertyPath: m_Name
-      value: BackScreenText
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

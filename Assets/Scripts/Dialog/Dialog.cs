@@ -1,5 +1,6 @@
 ﻿using Character;
 using Core;
+using Localization;
 using UnityEngine;
 
 namespace Dialog
@@ -8,6 +9,7 @@ namespace Dialog
     {
         private int _currentDialogIndex;
         private readonly string[] _texts;
+        private readonly int[] _locIds;
         private readonly Sprite _speakerSprite;
         private readonly string _speakerName;
         private readonly bool _increaseStageOnDialogEnd;
@@ -22,6 +24,7 @@ namespace Dialog
             _speakerSprite = dialogData.speakerSprite;
             _speakerName = dialogData.speakerName;
             _texts = dialogData.dialogText.ToArray();
+            _locIds = dialogData.dialogLocId.ToArray();
         }
 
         public Sprite GetSpeakerSprite()
@@ -36,7 +39,7 @@ namespace Dialog
 
         public bool HasNextDialog()
         {
-            return _currentDialogIndex < _texts.Length;
+            return _currentDialogIndex < _locIds.Length;
         }
 
         public bool ShouldIncreaseStageOnDialogEnd()
@@ -57,7 +60,7 @@ namespace Dialog
         public string GetNextDialog()
         {
             if (!HasNextDialog()) return null;
-            var dialog = _texts[_currentDialogIndex];
+            var dialog = LocalizationManager.Instance.GetLocalizedValue(_locIds[_currentDialogIndex]);
             _currentDialogIndex++;
 
             return dialog;

@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: Daniel
   dialogText:
   - "I don\u2019t have anything to add."
+  dialogLocId: 44000000

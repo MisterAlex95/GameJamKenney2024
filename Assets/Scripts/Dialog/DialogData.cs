@@ -20,5 +20,6 @@ namespace Dialog
         public string speakerName;
 
         public List<string> dialogText = new();
+        public List<int> dialogLocId = new();
     }
 }
