@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: 
   dialogText:
   - +Wait something is odd with this ticket.
+  dialogLocId: 4c000000

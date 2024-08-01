@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: Coffe Machine
   dialogText:
   - +This coffee looks very tasty.
+  dialogLocId: 4d000000

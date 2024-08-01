@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: Ian Pumin
   dialogText:
   - Can you please go talk to someone else for a bit? I need some time alone.
+  dialogLocId: 42000000

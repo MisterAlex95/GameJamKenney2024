@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: 
   dialogText:
   - +There is a lot of fresh food to eat in there.
+  dialogLocId: 47000000

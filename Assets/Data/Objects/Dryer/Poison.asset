@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: 
   dialogText:
   - "+The killer didn\u2019t really took time to hide the murder."
+  dialogLocId: 4a000000

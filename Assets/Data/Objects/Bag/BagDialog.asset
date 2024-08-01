@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: 
   dialogText:
   - +Livia really went to the movies until the end.
+  dialogLocId: 4b000000

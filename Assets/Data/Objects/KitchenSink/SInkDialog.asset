@@ -21,3 +21,4 @@ MonoBehaviour:
   speakerName: 
   dialogText:
   - +This needs to go to the police as evidence.
+  dialogLocId: 49000000

@@ -22,3 +22,4 @@ MonoBehaviour:
   dialogText:
   - "+It doesn\u2019t seem to be that well cleaned."
   - "+Time to search for other clues and try to recreate everyone\u2019s schedule!"
+  dialogLocId: 4500000046000000

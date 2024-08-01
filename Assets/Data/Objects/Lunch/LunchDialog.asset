@@ -22,3 +22,4 @@ MonoBehaviour:
   dialogText:
   - +This event shortened the lunch and it seems that only two people ate here for
     lunch.
+  dialogLocId: 48000000
