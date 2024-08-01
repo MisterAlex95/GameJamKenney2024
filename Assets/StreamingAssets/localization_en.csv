@@ -9,6 +9,7 @@
 7,French
 8,Save
 9,Quit
+147,Close
 10,Mochi
 11,Nellouche
 // Notes
@@ -42,6 +43,7 @@
 38,10am
 39,11am
 40,12pm
+// Clues
 41,Maddy Thomas was killed between 8am and 1pm.
 42,Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.
 43,The floor is still a bit dirty despite the heavy clean.
@@ -49,6 +51,14 @@
 45,Only two people ate here for lunch.
 46,The killer was in a hurry.
 47,Livia went to the movies between 9.15am and 11.40am.
+140,Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.
+141,Livia discovered Maddy at 1pm when she went answering her ringing phone.
+142,Ian slept until he was disturbed by noises coming from the ground floor.
+143,Ian cooked a lot of food and then ate lunch with Livia.
+144,Daniel ate a big lunch at the restaurant with his friend Norah.
+145,Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.
+146,Livia went to the 9.30am film show and came back right after it.
+// Tickets
 48,Bricktown's Theater Parking
 49,Receipt
 50,Arrival 09.15am

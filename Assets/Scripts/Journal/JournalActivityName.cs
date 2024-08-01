@@ -1,4 +1,5 @@
 ﻿using System;
+using Localization;
 
 namespace Journal
 {
@@ -17,20 +18,20 @@ namespace Journal
 
     public static class JournalActivityNameExtensions
     {
-        public static string ToFriendlyString(this JournalActivityName activity)
+        public static int ToFriendlyString(this JournalActivityName activity)
         {
             return activity switch
             {
-                JournalActivityName.None => "None",
-                JournalActivityName.Breakfast => "Breakfast",
-                JournalActivityName.Sleeping => "Sleeping",
-                JournalActivityName.Cleaning => "Cleaning",
-                JournalActivityName.Reading => "Reading",
-                JournalActivityName.Cooking => "Cooking",
-                JournalActivityName.Lunch => "Lunch",
-                JournalActivityName.Restaurant => "Restaurant",
-                JournalActivityName.Cinema => "Cinema",
-                _ => "Unknown"
+                JournalActivityName.None => 27,
+                JournalActivityName.Breakfast => 28,
+                JournalActivityName.Sleeping => 29,
+                JournalActivityName.Cleaning => 30,
+                JournalActivityName.Reading => 31,
+                JournalActivityName.Cooking => 33,
+                JournalActivityName.Lunch => 34,
+                JournalActivityName.Restaurant => 32,
+                JournalActivityName.Cinema => 35,
+                _ => 0
             };
         }
 

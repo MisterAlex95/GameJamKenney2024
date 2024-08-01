@@ -9,6 +9,7 @@
 7,Français
 8,Sauvegarder
 9,Quitter
+147,Fermer
 10,Mochi
 11,Nellouche
 // Notes
@@ -42,6 +43,7 @@
 38,10h
 39,11h
 40,12h
+// Indices
 41,Maddy Thomas a été tuée entre 8h et 13h.
 42,Daniel a nettoyé le rez-de-chaussée, puis a lu deux heures dans la cuisine pendant que Ian cuisinait.
 43,Le sol est toujours un peu sale, malgré le gros ménage.
@@ -49,6 +51,14 @@
 45,Seulement deux personnes ont déjeuné ici.
 46,Le.la meurtrier.ère était pressé.e.
 47,Livia était au cinéma de 9h15 à 11h45.
+140,Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.
+141,Livia discovered Maddy at 1pm when she went answering her ringing phone.
+142,Ian slept until he was disturbed by noises coming from the ground floor.
+143,Ian cooked a lot of food and then ate lunch with Livia.
+144,Daniel ate a big lunch at the restaurant with his friend Norah.
+145,Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.
+146,Livia went to the 9.30am film show and came back right after it.
+// Tickets
 48,Parking du cinéma de Bricktown
 49,Reçu
 50,Arrivée 9h15

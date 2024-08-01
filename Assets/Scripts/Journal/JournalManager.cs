@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Character;
 using Core;
 using Dialog;
+using Localization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -42,7 +43,7 @@ namespace Journal
 
         private bool _hasCheckTheLetter = false;
         private readonly List<JournalActivityName> _unlockedActivities = new();
-        private readonly List<string> _cluesAlreadyUnlocked = new();
+        private readonly List<int> _cluesAlreadyUnlocked = new();
 
         private readonly Dictionary<CharacterName, Dictionary<int, JournalActivityName>> _journalActivities = new()
         {
@@ -50,33 +51,33 @@ namespace Journal
                 CharacterName.Daniel,
                 new Dictionary<int, JournalActivityName>
                 {
-                    { 9, JournalActivityName.None },
-                    { 10, JournalActivityName.None },
-                    { 11, JournalActivityName.None },
-                    { 12, JournalActivityName.None },
-                    { 13, JournalActivityName.None }
+                    {9, JournalActivityName.None},
+                    {10, JournalActivityName.None},
+                    {11, JournalActivityName.None},
+                    {12, JournalActivityName.None},
+                    {13, JournalActivityName.None}
                 }
             },
             {
                 CharacterName.Ian,
                 new Dictionary<int, JournalActivityName>
                 {
-                    { 9, JournalActivityName.None },
-                    { 10, JournalActivityName.None },
-                    { 11, JournalActivityName.None },
-                    { 12, JournalActivityName.None },
-                    { 13, JournalActivityName.None }
+                    {9, JournalActivityName.None},
+                    {10, JournalActivityName.None},
+                    {11, JournalActivityName.None},
+                    {12, JournalActivityName.None},
+                    {13, JournalActivityName.None}
                 }
             },
             {
                 CharacterName.Livia,
                 new Dictionary<int, JournalActivityName>
                 {
-                    { 9, JournalActivityName.None },
-                    { 10, JournalActivityName.None },
-                    { 11, JournalActivityName.None },
-                    { 12, JournalActivityName.None },
-                    { 13, JournalActivityName.None }
+                    {9, JournalActivityName.None},
+                    {10, JournalActivityName.None},
+                    {11, JournalActivityName.None},
+                    {12, JournalActivityName.None},
+                    {13, JournalActivityName.None}
                 }
             }
         };
@@ -89,33 +90,33 @@ namespace Journal
                     CharacterName.Daniel,
                     new Dictionary<int, JournalActivityName>
                     {
-                        { 9, JournalActivityName.Breakfast },
-                        { 10, JournalActivityName.Cleaning },
-                        { 11, JournalActivityName.Reading },
-                        { 12, JournalActivityName.Reading },
-                        { 13, JournalActivityName.Restaurant }
+                        {9, JournalActivityName.Breakfast},
+                        {10, JournalActivityName.Cleaning},
+                        {11, JournalActivityName.Reading},
+                        {12, JournalActivityName.Reading},
+                        {13, JournalActivityName.Restaurant}
                     }
                 },
                 {
                     CharacterName.Ian,
                     new Dictionary<int, JournalActivityName>
                     {
-                        { 9, JournalActivityName.Sleeping },
-                        { 10, JournalActivityName.Sleeping },
-                        { 11, JournalActivityName.Cooking },
-                        { 12, JournalActivityName.Cooking },
-                        { 13, JournalActivityName.Lunch }
+                        {9, JournalActivityName.Sleeping},
+                        {10, JournalActivityName.Sleeping},
+                        {11, JournalActivityName.Cooking},
+                        {12, JournalActivityName.Cooking},
+                        {13, JournalActivityName.Lunch}
                     }
                 },
                 {
                     CharacterName.Livia,
                     new Dictionary<int, JournalActivityName>
                     {
-                        { 9, JournalActivityName.Breakfast },
-                        { 10, JournalActivityName.Cinema },
-                        { 11, JournalActivityName.Cinema },
-                        { 12, JournalActivityName.Cinema },
-                        { 13, JournalActivityName.Lunch }
+                        {9, JournalActivityName.Breakfast},
+                        {10, JournalActivityName.Cinema},
+                        {11, JournalActivityName.Cinema},
+                        {12, JournalActivityName.Cinema},
+                        {13, JournalActivityName.Lunch}
                     }
                 }
             };
@@ -178,8 +179,7 @@ namespace Journal
             // First lecture we unlocked a first clue
             if (_hasCheckTheLetter)
             {
-                AddObjectClue(
-                    "- Maddy Thomas was killed between 8am and 1pm.");
+                AddObjectClue(41);
             }
         }
 
@@ -212,6 +212,12 @@ namespace Journal
                 if (_hasCheckTheLetter)
                 {
                     GameManager.Instance.ProcessTriggerAction(TriggerActionName.Enable_Foot_Print);
+                }
+
+                // First time it sees the restaurant ticket and close the journal
+                if (_hasCheckTheLetter)
+                {
+                    GameManager.Instance.ProcessTriggerAction(TriggerActionName.Checked_Restaurant_Ticket);
                 }
             }
         }
@@ -255,27 +261,29 @@ namespace Journal
             // Spawn the button in the activity modal
             var activityButton = Instantiate(activityModalButtonPrefab, activityContainer.transform);
             activityButton.GetComponent<ActivityModalButton>().SetActivity(activity);
-            activityButton.GetComponentInChildren<TMP_Text>().text = activity.ToFriendlyString();
+            activityButton.GetComponentInChildren<TMP_Text>().text =
+                LocalizationManager.Instance.GetLocalizedValue(activity.ToFriendlyString());
         }
 
-        public void AddDialogClue(string clue)
+        public void AddDialogClue(int locId)
         {
-            if (_cluesAlreadyUnlocked.Contains(clue)) return;
-            _cluesAlreadyUnlocked.Add(clue);
+            if (_cluesAlreadyUnlocked.Contains(locId)) return;
+            _cluesAlreadyUnlocked.Add(locId);
 
             var dialogClue = Instantiate(clueTextPrefab,
                 dialogCluesContainer.transform);
-            dialogClue.GetComponentInChildren<TMP_Text>().text = clue;
+            dialogClue.GetComponentInChildren<TMP_Text>().text = LocalizationManager.Instance.GetLocalizedValue(locId);
+            ;
         }
 
-        public void AddObjectClue(string clue)
+        public void AddObjectClue(int locId)
         {
-            if (_cluesAlreadyUnlocked.Contains(clue)) return;
-            _cluesAlreadyUnlocked.Add(clue);
+            if (_cluesAlreadyUnlocked.Contains(locId)) return;
+            _cluesAlreadyUnlocked.Add(locId);
 
             var dialogClue = Instantiate(clueTextPrefab,
                 objectCluesContainer.transform);
-            dialogClue.GetComponentInChildren<TMP_Text>().text = clue;
+            dialogClue.GetComponentInChildren<TMP_Text>().text = LocalizationManager.Instance.GetLocalizedValue(locId);
         }
 
         private void CheckJournal()
@@ -309,7 +317,8 @@ namespace Journal
                 activityModalButton.SetOnClick((activity) =>
                 {
                     _journalActivities[characterName][activityHour] = activity;
-                    RenameButton(characterName, activityHour, activity.ToFriendlyString());
+                    RenameButton(characterName, activityHour,
+                        LocalizationManager.Instance.GetLocalizedValue(activity.ToFriendlyString()));
                     activityModal.SetActive(false);
                     StartCoroutine(DelayedCheckJournal());
                 });
@@ -339,7 +348,8 @@ namespace Journal
 
             foreach (var button in buttons)
             {
-                button.GetComponentInChildren<TMP_Text>().text = JournalActivityName.None.ToFriendlyString();
+                button.GetComponentInChildren<TMP_Text>().text =
+                    LocalizationManager.Instance.GetLocalizedValue(JournalActivityName.None.ToFriendlyString());
             }
         }
 

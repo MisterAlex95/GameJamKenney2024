@@ -39,7 +39,6 @@ namespace Core
         private bool _isPrintingFinished;
         private string _textLetter;
 
-
         public Transform positionDanielReturned;
         public CharacterData characterData;
         private int _currentState = 0;
@@ -256,63 +255,55 @@ namespace Core
                     UpdateArrowMoveRegardingPosition();
                     break;
                 case TriggerActionName.Add_Foot_Print_To_Clues:
-                    JournalManager.Instance.AddObjectClue("- The floor is still a bit dirty despite the heavy clean.");
+                    JournalManager.Instance.AddObjectClue(43);
                     break;
                 case TriggerActionName.Add_Fridge_To_Clues:
-                    JournalManager.Instance.AddObjectClue("- A lot of fresh food was cooked recently.");
+                    JournalManager.Instance.AddObjectClue(44);
                     break;
                 case TriggerActionName.Add_Diner_To_Clues:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
-                    JournalManager.Instance.AddObjectClue("- Only two people ate here for lunch.");
+                    JournalManager.Instance.AddObjectClue(45);
                     break;
 
                 // Livia Dialogs
                 case TriggerActionName.Add_Livia_Morning:
                     SetCharacterState(characterData.characterName, 2);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Breakfast);
-                    JournalManager.Instance.AddDialogClue(
-                        "- Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.");
-                    JournalManager.Instance.AddDialogClue(
-                        "- Livia discovered Maddy at 1pm when she went answering her ringing phone.");
+                    JournalManager.Instance.AddDialogClue(140);
+                    JournalManager.Instance.AddDialogClue(141);
                     break;
                 case TriggerActionName.Add_Livia_Cinema:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cinema);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
-                    JournalManager.Instance.AddDialogClue(
-                        "- Livia went to the 9.30am film show and came back right after it.");
+                    JournalManager.Instance.AddDialogClue(146);
                     break;
 
                 // Ian Dialogs
                 case TriggerActionName.Add_Ian_Morning:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Sleeping);
-                    JournalManager.Instance.AddDialogClue(
-                        "- Ian slept until he was disturbed by noises coming from the ground floor.");
+                    JournalManager.Instance.AddDialogClue(142);
                     break;
                 case TriggerActionName.Add_Ian_Cooking:
                     SetCharacterState(CharacterName.Daniel, 3);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Lunch);
-                    JournalManager.Instance.AddDialogClue(
-                        "- Ian cooked a lot of food and then ate lunch with Livia.");
+                    JournalManager.Instance.AddDialogClue(143);
                     break;
 
                 // Daniel Dialogs
                 case TriggerActionName.Add_Daniel_Lunch:
                     JournalManager.Instance.MakeTicketRestaurantAppear();
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Restaurant);
-                    JournalManager.Instance.AddDialogClue(
-                        "- Daniel ate a big lunch at the restaurant with his friend Norah.");
+                    JournalManager.Instance.AddDialogClue(144);
                     break;
                 case TriggerActionName.Add_Daniel_Cleaning:
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cleaning);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Cooking);
                     JournalManager.Instance.UnlockActivity(JournalActivityName.Reading);
-                    JournalManager.Instance.AddDialogClue(
-                        "- Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.");
+                    JournalManager.Instance.AddDialogClue(145);
                     break;
 
                 case TriggerActionName.Add_Poison_Clue:
-                    JournalManager.Instance.AddObjectClue(
-                        "- The killer was in a hurry.");
+                    JournalManager.Instance.AddObjectClue(46);
                     break;
                 case TriggerActionName.Add_Evidence:
                     break;
@@ -321,8 +312,7 @@ namespace Core
                     ProcessTriggerAction(TriggerActionName.Tickets_Appear);
                     JournalManager.Instance.MakeTicketParkingAppear();
                     JournalManager.Instance.MakeTicketCinemaAppear();
-                    JournalManager.Instance.AddObjectClue(
-                        "- Livia went to the movies between 9.15am and 11.40am.");
+                    JournalManager.Instance.AddObjectClue(47);
                     break;
                 case TriggerActionName.Planning_Correct:
                     var daniel = GameObject.Find("Daniel Pumin");
@@ -333,6 +323,9 @@ namespace Core
                     StartCoroutine(EndGame());
                     break;
 
+                case TriggerActionName.Checked_Restaurant_Ticket:
+                    DialogManager.Instance.StartDialogOfCharacter(CharacterName.Daniel);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(triggerAction), triggerAction, null);
             }

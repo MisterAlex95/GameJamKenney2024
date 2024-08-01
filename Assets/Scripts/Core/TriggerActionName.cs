@@ -21,6 +21,7 @@
         Add_Evidence,
         Add_Livia_Tickets,
         Planning_Correct,
-        End_Game
+        End_Game,
+        Checked_Restaurant_Ticket
     }
 }

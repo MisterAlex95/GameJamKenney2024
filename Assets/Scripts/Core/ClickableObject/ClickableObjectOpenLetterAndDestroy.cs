@@ -1,9 +1,12 @@
-﻿namespace Core.ClickableObject
+﻿using Localization;
+
+namespace Core.ClickableObject
 {
     public class ClickableObjectOpenModalAndTriggerAction : ClickableObject
     {
         public TriggerActionName triggerActionName;
         public string modalText;
+        public int modalLocId;
 
         public new void OnMouseDown()
         {
@@ -11,7 +14,7 @@
             if (BaseReturned) return;
 
             GameManager.Instance.OpenModal(
-                modalText,
+                LocalizationManager.Instance.GetLocalizedValue(modalLocId),
                 () =>
                 {
                     GameManager.Instance.ProcessTriggerAction(triggerActionName);

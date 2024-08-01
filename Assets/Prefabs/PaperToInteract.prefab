@@ -127,3 +127,4 @@ MonoBehaviour:
   modalText: You successfully took an object. The letter is now available in your
     inventory. Simply tap on your Notebook to open or close it or to access other 
     clues you already found or objects.
+  modalLocId: 22
