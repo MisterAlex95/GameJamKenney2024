@@ -1,0 +1,68 @@
+﻿key;EN;FR;
+//Menu;;;
+;Play;Jouer;
+;Credits;Crédits;
+;Options;Options;
+;Easter Egg;Easter Egg;
+;Language;Langue;
+;English;Anglais;
+;French;Français;
+;Save;Sauvegarder;
+;Quit;Quitter;
+//Intro;;;
+;You got a new mail!;Vous avez reçu un nouveau mail!;
+;Tap to continue;Cliquer pour continuer;
+;Later the same day;Plus tard dans la journée;
+;+Hello, we are Alex and Mary from Camden.;+Bonjour, Alex et Mary de Camden.;
+;+We were contacted by Officer Kenney about the murder of Maddy Thomas.;+Nous avons été contactés par l'officier Kenney à propos du meurtre de Maddy Thomas.;
+;Hello, I’m Daniel Pumin. Yes they told us that someone will come later today.;;Daniel
+;Thanks for being so fast. It is a sad day for all of us, but we’ll try to help you as much as possible.;;
+;+Thank you a lot for the help. ;;
+;+First of all we were told that we’ll be able to find the doctor’s report at your house. Can we have it please?;;
+;Yes, sure. Here it is.;;Daniel
+;You successfully took an object. The letter is now available in your inventory. Simply tap on your Notebook and click on Letter to read it.;;
+//Notebook;;;
+;Planning;Planning;
+;Clues;Indices;
+;Letter;Lettre;
+;Tickets;Tickets;
+;None;Rien;
+;Breakfast;Petit-déjeuner;
+;Sleeping;Dormir;
+;Cleaning;Ménage;
+;Reading;Lecture;
+;Restaurant;Restaurant;
+;Cooking;Cuisine;
+;Lunch;Déjeuner;
+;Movies;Cinéma;
+;8am;8h;
+;9am;9h;
+;10am;10h;
+;11am;11h;
+;12pm;12h;
+;Maddy Thomas was killed between 8am and 1pm.;;
+;Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;;;
+;+Thanks for that. We have a first question for you. ;;
+;+What did you do this morning before the body was found?;;
+;I did a pretty heavy clean of the ground floor before taking about two hours to read my book.;;Daniel
+;Ian needed the kitchen, so it was better to let him the space to cook. But I stayed with him so we can have some time together.;;
+;+Ok, thanks. We will come back if you have more questions more you.;;
+//Loops;;;
+;Let me a bit of time please, it is a hard day, but don’t hesitate to go around the house in the meantime.;;Daniel 1
+;Can you please go talk to someone else for a bit? I need some time alone.;;Ian 1
+;I’m having a really hard time realizing that Maddy is no longer here with us. can we continue a bit later please?;;Livia 1
+;I don’t have anything to add.’;;All 2
+;;;
+//Dialogues;;;
+;;;Daniel 2

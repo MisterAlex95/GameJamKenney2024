@@ -1,0 +1,158 @@
+﻿key,value
+// Menu
+1,Jouer
+2,Crédits
+3,Options
+4,Easter Egg
+5,Langue
+6,Anglais
+7,Français
+8,Sauvegarder
+9,Quitter
+147,Fermer
+10,Mochi
+11,Nellouche
+// Notes
+12,Vous avez reçu un nouveau mail!
+13,Cliquer pour continuer
+14,Plus tard dans la journée
+15,+Bonjour, Alex et Mary de Camden.
+16,+Nous avons été contactés par l'officier Kenney à propos du meurtre de Maddy Thomas.
+17,Bonjour, je suis Daniel Pumin. Oui nous avons bien été informé.es que quelqu'un allait venir un peu plus tard.
+18,Merci d'avoir été si rapides. C'est une bien triste journée pour tout le monde, mais nous essayerons tout de même de vous aider le plus possible.
+19,+Merci beaucoup pour votre aide.
+20,+Tout d'abord on nous a dit qu'on allait trouver le rapport médical ici. Pouvons-nous l'avoir s'il vous plait?
+21,Oui bien-sûr, le voilà.
+22,Vous avez pris un objet avec succès. La lettre est maintenant disponible dans votre inventaire. Cliquez sur votre carnet puis sur Lettre pour la lire.
+// Notebook
+23,Planning
+24,Indices
+25,Lettre
+26,Tickets
+27,Rien
+28,Petit-déjeuner
+29,Dormir
+30,Ménage
+31,Lecture
+32,Restaurant
+33,Cuisine
+34,Déjeuner
+35,Cinéma
+36,8h
+37,9h
+38,10h
+39,11h
+40,12h
+// Indices
+41,Maddy Thomas a été tuée entre 8h et 13h.
+42,Daniel a nettoyé le rez-de-chaussée, puis a lu deux heures dans la cuisine pendant que Ian cuisinait.
+43,Le sol est toujours un peu sale, malgré le gros ménage.
+44,Beaucoup de nourriture fraîche a été cuisinée récemment.
+45,Seulement deux personnes ont déjeuné ici.
+46,Le.la meurtrier.ère était pressé.e.
+47,Livia était au cinéma de 9h15 à 11h45.
+140,Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.
+141,Livia discovered Maddy at 1pm when she went answering her ringing phone.
+142,Ian slept until he was disturbed by noises coming from the ground floor.
+143,Ian cooked a lot of food and then ate lunch with Livia.
+144,Daniel ate a big lunch at the restaurant with his friend Norah.
+145,Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.
+146,Livia went to the 9.30am film show and came back right after it.
+// Tickets
+48,Parking du cinéma de Bricktown
+49,Reçu
+50,Arrivée 9h15
+51,Départ 11h45
+52,Durée 2h30
+53,Prix 7$
+54,3 FEV 2014 - 11h45
+55,Du sang et des larmes
+56,Tarif étudiant - 4$
+57,LUN 3 FEV 2014 - 9h30
+58,Cinéma de Bricktown
+59,Choisir une activité
+// Loops
+60,+Merci. Nous avons une première question pour vous.
+61,+Qu'avez-vous fait ce matin avant la découverte du corps?
+62,J'ai fait un ménage plutôt conséquent du rez-de-chaussée puis j'ai lu pendant environ deux heures.
+63,Ian avait besoin de la cuisine donc il était préférable de lui laisser l'espace faire à manger. Mais je suis tout de même resté avec lui pour pouvoir passer plus de temps ensemble.
+64,+Ok, merci. Nous reviendrons si nous avons d'autres questions.
+// Object Loops
+65,Laissez-moi un peu de temps s'il vous plait, c'est une dure journée. Mais n'hésitez pas à faire le tour de la maison en attendant.
+66,Pouvez-vous aller parler à quelqu'un d'autre pendant quelques minutes? J'ai besoin d'un peu de temps pour moi.
+67,J'ai beaucoup de mal à réaliser que Maddy est partie. Pouvons-nous continuer un peu plus tard?
+68,Je n'ai rien à ajouter.
+69,+Ca n'a pas l'air si bien nettoyé que ça.
+70,+C'est le moment de partir à la recherche d'autres indices et de recréer l'emploi du temps de tout le monde.
+71,+Il y a beaucoup de nourriture fraîche là-dedans.
+72,+Le déjeuner a pris fin rapidement en raison de cet évènement. Egalement seules deux personnes ont mangé ici.
+73,+Il s'agit clairement d'un élément devant aller à la police en tant que preuve.
+74,+Le.la meurtrier.ère n'a pas vraiment pris le temps de camoufler son meurtre.
+75,+Livia est vraiment restée jusqu'à la fin du film.
+76,+Attendez, quelque chose est bizarre avec ce reçu.
+77,+Ce café a l'air délicieux.
+// Dialogues
+78,NO_TEXT
+79,NO_TEXT
+80,NO_TEXT
+81,NO_TEXT
+82,NO_TEXT
+83,NO_TEXT
+84,NO_TEXT
+85,NO_TEXT
+86,NO_TEXT
+87,NO_TEXT
+88,NO_TEXT
+89,NO_TEXT
+90,NO_TEXT
+91,NO_TEXT
+92,NO_TEXT
+93,NO_TEXT
+94,NO_TEXT
+95,NO_TEXT
+96,NO_TEXT
+97,NO_TEXT
+98,NO_TEXT
+99,NO_TEXT
+100,NO_TEXT
+101,NO_TEXT
+// Outro
+102,NO_TEXT
+103,NO_TEXT
+104,NO_TEXT
+105,NO_TEXT
+106,NO_TEXT
+107,NO_TEXT
+108,NO_TEXT
+109,NO_TEXT
+110,NO_TEXT
+111,NO_TEXT
+112,NO_TEXT
+113,NO_TEXT
+114,NO_TEXT
+115,NO_TEXT
+116,NO_TEXT
+117,NO_TEXT
+118,NO_TEXT
+119,NO_TEXT
+120,NO_TEXT
+121,NO_TEXT
+122,NO_TEXT
+123,NO_TEXT
+124,NO_TEXT
+125,NO_TEXT
+126,NO_TEXT
+127,NO_TEXT
+128,NO_TEXT
+129,NO_TEXT
+130,NO_TEXT
+131,NO_TEXT
+132,NO_TEXT
+// Credits
+133,Jeu
+134,Créé dans le cadre de la Kenney Game Jam 2024
+135,Alex Dana Programming, Level Building, Sound Design
+136,Marie Berbette Producer, Game- Level & Narration Design
+137,Tous les assets visuels proviennent des packs d'assets de Kenney.
+138,Tous les assets sonores proviennent de banques de sons gratuites.
+139,Merci d'avoir joué à notre jeu! :D

@@ -1,0 +1,158 @@
+﻿key,value
+// Menu
+1,Play
+2,Credits
+3,Options
+4,Easter Egg
+5,Language
+6,English
+7,French
+8,Save
+9,Quit
+147,Close
+10,Mochi
+11,Nellouche
+// Notes
+12,You got a new mail!
+13,Tap to continue
+14,Later the same day
+15,+Hello, we are Alex and Mary from Camden.
+16,+We were contacted by Officer Kenney about the murder of Maddy Thomas.
+17,Hello, I’m Daniel Pumin. Yes they told us that someone will come later today.
+18,Thanks for being so fast. It is a sad day for all of us, but we’ll try to help you as much as possible.
+19,+Thank you a lot for the help.
+20,+First of all we were told that we’ll be able to find the doctor’s report at your house. Can we have it please?
+21,Yes, sure. Here it is.
+22,You successfully took an object. The letter is now available in your inventory. Simply tap on your Notebook and click on Letter to read it.
+// Notebook,
+23,Planning
+24,Clues
+25,Letter
+26,Tickets
+27,None
+28,Breakfast
+29,Sleeping
+30,Cleaning
+31,Reading
+32,Restaurant
+33,Cooking
+34,Lunch
+35,Movies
+36,8am
+37,9am
+38,10am
+39,11am
+40,12pm
+// Clues
+41,Maddy Thomas was killed between 8am and 1pm.
+42,Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.
+43,The floor is still a bit dirty despite the heavy clean.
+44,A lot of fresh food was cooked recently.
+45,Only two people ate here for lunch.
+46,The killer was in a hurry.
+47,Livia went to the movies between 9.15am and 11.40am.
+140,Livia woke up at 8am, ate breakfast with Daniel. Maddy was still sleeping.
+141,Livia discovered Maddy at 1pm when she went answering her ringing phone.
+142,Ian slept until he was disturbed by noises coming from the ground floor.
+143,Ian cooked a lot of food and then ate lunch with Livia.
+144,Daniel ate a big lunch at the restaurant with his friend Norah.
+145,Daniel cleaned the ground floor, then read for two hours in the kitchen with Ian cooking.
+146,Livia went to the 9.30am film show and came back right after it.
+// Tickets
+48,Bricktown's Theater Parking
+49,Receipt
+50,Arrival 09.15am
+51,Departure 11.45am
+52,Duration 2.30 Hours
+53,Price 7$
+54,3 FEB 2014 - 11.45am
+55,Lone Survivor
+56,Student Price - 4$
+57,MON 3 FEB 2014 - 9.30am
+58,Bricktown Theater
+59,Select an activity
+// Loops
+60,+Thanks for that. We have a first question for you.
+61,+What did you do this morning before the body was found?
+62,I did a pretty heavy clean of the ground floor before taking about two hours to read my book.
+63,Ian needed the kitchen, so it was better to let him the space to cook. But I stayed with him so we can have some time together.
+64,+Ok, thanks. We will come back if you have more questions more you.
+// Object Loops
+65,Let me a bit of time please, it is a hard day, but don’t hesitate to go around the house in the meantime.
+66,Can you please go talk to someone else for a bit? I need some time alone.
+67,I’m having a really hard time realizing that Maddy is no longer here with us. can we continue a bit later please?
+68,I don’t have anything to add.’
+69,+It doesn’t seem to be that well cleaned.
+70,+Time to search for other clues and try to recreate everyone’s schedule!’
+71,+There is a lot of fresh food to eat in there.’
+72,+This event shortened the lunch and it seems that only two people ate here for lunch.’
+73,+This needs to go to the police as evidence.
+74,+The killer didn’t really took time to hide the murder.’
+75,+Livia really went to the movies until the end.’
+76,+Wait something is odd with this ticket.
+77,+This coffee looks very tasty.
+// Dialogues
+78,+We need a bit more elements from you. We only saw tablewares for two in the living room. Where did you eat for lunch?
+79,Indeed, I didn’t had lunch here today. I went to the restaurant in town with my friend Norah at noon.
+80,I only came back at 1.10pm after I got a call from Ian telling me about Maddy.
+81,+Do you have any receipt to prove it?
+82,Unfortunately no, Norah paid for me as I was in a hurry.
+83,+Hello, we are Alex and Mary from Camden.
+84,Hello, I’m Ian Pumin. How can I help you?
+85,+We are investigating on Ms. Thomas sudden death by trying to recreate everyone’s schedule.
+86,+What did you do this morning between 8am and 1pm?
+87,I understand that you need to suspect me as well, but I mainly slept until I heard a big noise downstairs.
+88,+We have a new question for you Mr. Pumin. Downstairs we found only tablewares for two.
+89,+Where did you eat for lunch?
+90,I started to cook as soon as I got up and then ate with Livia around noon.
+91,But it seems like I took too much time preparing the food as there are a lot of leftovers.
+92,+Hello, we are Alex and Mary from Camden.
+93,Hello, I’m Livia Sumner. How can I help you?
+94,+We are investigating on Ms. Thomas murder and need to ask you some questions.
+95,+You slept with her last night. Was she awake this morning when you got up?
+96,Actually I woke up around 8am and went downstairs to have breakfast with my friend Daniel.
+97,Before leaving Maddy was still sleeping in the bed.
+98,+The Police told us that you were the one who discovered the corpse. Can you tell us a bit more about that?
+99,Sure, I was eating lunch with Ian when I heard my phone ringing in the guest room. I went up and that’s when I discovered Maddy.
+100,+We have a last question for you. What were you doing before lunch?
+101,I went to the movies for the 9.30am film show. I came back right after that back here.
+// Outro
+102,+We need to gather everybody in the hall. It seems like we know what happened.
+103,+Thank you all for coming here.
+104,+We took the liberty to bring you all together as we managed to solve the mystery behind Maddy Thomas’ death.
+105,+The Police will join us as soon as they can.
+106,Does that mean that we really have a killer among us?
+107,+Yes. And we even thank this person because we had enough clues to discover its identity quickly.
+108,Can we at least sit before your announcement?
+109,+No, we prefer to stay here and proceed directly, so the Police will be able to intervene as soon as they arrive.
+110,+We need to say that after retracing all of your activities from this morning everything seemed pretty normal.
+111,+Sure we had doubts because each of you had opportunity to kill Ms. Thomas at one point.
+112,+But you all had proofs that you didn’t lie. All except one.
+113,+Mr. Daniel Putin we know you are the one that killed Maddy.
+114,Are you really accusing me? Maddy was one of Ian’s best friends, I could never have done that.
+115,I hope you believe me sweetheart, I love you.
+116,I try to, but one of us really did that and it is not me. And what about you Livia?
+117,+Ms. Sumner you don’t have to respond to this question.
+118,+We know that you didn’t kill your roommate as you were either with someone in the house either to the movies.
+119,+Same for you Ian, either you were asleep, either you were with someone else. The only one with a false alibi is you Daniel.
+120,+You indeed ate breakfast with Livia, but after she left you cleaned just a little bit.
+121,+You then took this opportunity to concoct the poison and give Maddy a sleeping pill so you were sure that she won’t wake up.
+122,+But you did a little too much noise doing all that and it woke Ian up.
+123,+You had to stay in the kitchen because you needed to let your mixture still for an hour and make sure that Ian won’t discover it.
+124,+You manage to plan a last minute lunch with a friend that never came.
+125,+You said that you ate a lot but the receipt we found only contains a starter and you paid it at 12.15pm.
+126,+So you had enough time to come back and kill Maddy. Ian and Livia didn’t hear you because the door was closed and they were chatting.
+127,+You gave her the potion saying you just cooked something and you wanted her to try it.
+128,+You left in a hurry because you shouldn’t be seen that early in the house.
+129,+That’s when you didn’t took enough time to clean behind you.
+130,+After that you waited for Ian’s call a few streets further and came back like you never left the restaurant before.
+131,I’m sorry Ian, but I had to kill her, because
+132,+Save your words for the Police, they are coming.
+// Credits
+133,Name
+134,Created as part of the Kenney Game Jam 2024
+135,Alex Dana Programming, Level Building, Sound Design
+136,Marie Berbette Producer, Game- Level & Narration Design, Localization
+137,All visual assets are from Kenney Assets Packs.
+138,All sound assets are from Free Sound Banks.
+139,Thanks a lot for playing our game! :D
